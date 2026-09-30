@@ -108,34 +108,204 @@ h1{font-size:22px;margin:0 0 6px}
 .map-buttons a{padding:12px;text-align:center;border-radius:12px;background:#171717;border:1px solid var(--line);font-size:11px}
 footer{text-align:center;color:#666;font-size:10px;padding-top:28px}
 @media(max-width:380px){.grid{grid-template-columns:1fr}.report{min-width:88%}}
-  .report-dots{
+/* =========================
+   گزارش تصویری جدید
+========================= */
+
+.reports{
+  width:100%;
+}
+
+.report-card{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:18px;
+  overflow:hidden;
+  position:relative;
+  background:#090909;
+}
+
+/* قاب اسلایدر */
+.report-gallery{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  touch-action:pan-y;
+  background:#080808;
+}
+
+/* ریل عکس‌ها */
+.report-track{
   display:flex;
+  width:100%;
+  will-change:transform;
+  transform:translate3d(0,0,0);
+}
+
+/* هر عکس */
+.report-slide{
+  flex:0 0 100%;
+  width:100%;
+  position:relative;
+  overflow:hidden;
+}
+
+.report-slide img{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:16 / 10;
+  object-fit:cover;
+  user-select:none;
+  -webkit-user-drag:none;
+  pointer-events:none;
+
+  transform:scale(1);
+  transition:transform .6s cubic-bezier(.22,.61,.36,1);
+}
+
+.report-slide.active img{
+  transform:scale(1.025);
+}
+
+/* نوار شیشه‌ای پایین عکس */
+.report-controls{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+
+  height:43px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:linear-gradient(
+    to top,
+    rgba(5,5,5,.94),
+    rgba(5,5,5,.48)
+  );
+
+  backdrop-filter:blur(9px);
+  -webkit-backdrop-filter:blur(9px);
+
+  z-index:5;
+}
+
+/* نقطه‌ها */
+.report-dots{
+  display:flex;
+  align-items:center;
   justify-content:center;
   gap:6px;
-  padding:7px 0 2px;
   direction:ltr;
 }
 
+/* نقطه معمولی */
 .report-dot{
-  width:6px;
-  height:6px;
-  border:0;
+  width:5px;
+  height:5px;
   padding:0;
+  border:0;
   border-radius:50%;
-  background:#777;
-  opacity:.6;
-  transition:all .25s ease;
+  background:rgba(255,255,255,.38);
+  transition:
+    width .35s cubic-bezier(.22,.61,.36,1),
+    background .35s ease,
+    opacity .35s ease;
 }
 
+/* کپسول فعال */
 .report-dot.active{
-  width:16px;
-  border-radius:99px;
-  opacity:1;
+  width:21px;
+  height:5px;
+  border-radius:20px;
   background:#d12a2a;
+  opacity:1;
+  box-shadow:0 0 10px rgba(209,42,42,.3);
 }
 
-.report-gallery{
-  scroll-behavior:smooth;
+/* افکت نور هنگام تعویض */
+.report-flash{
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255,255,255,.12) 50%,
+    transparent 80%
+  );
+
+  opacity:0;
+  transform:translateX(-100%);
+  pointer-events:none;
+  z-index:10;
+}
+
+.report-flash.play{
+  animation:reportFlash .42s ease;
+}
+
+@keyframes reportFlash{
+  0%{
+    opacity:0;
+    transform:translateX(-100%);
+  }
+
+  35%{
+    opacity:.65;
+  }
+
+  100%{
+    opacity:0;
+    transform:translateX(100%);
+  }
+}
+
+/* اطلاعات گزارش؛ کاملاً جدا از عکس */
+.report-info{
+  position:static;
+  padding:18px 10px 5px;
+  text-align:center;
+  background:none;
+}
+
+.report-info b{
+  display:block;
+  font-size:14px;
+  margin-bottom:6px;
+  color:#f1f1f1;
+}
+
+.report-info small{
+  color:#999;
+  font-size:11px;
+}
+
+/* موبایل */
+@media(max-width:600px){
+
+  .report-card{
+    border-radius:15px;
+  }
+
+  .report-controls{
+    height:40px;
+  }
+
+  .report-info{
+    padding-top:17px;
+  }
+
+  .report-info b{
+    font-size:13px;
+  }
+
+  .report-info small{
+    font-size:10px;
+  }
 }
 </style>
 </head>
@@ -155,8 +325,7 @@ footer{text-align:center;color:#666;font-size:10px;padding-top:28px}
   <button class="report-dot" type="button"></button>
   <button class="report-dot" type="button"></button>
   </div>
-<div class="section-title">گزارش‌های تصویری</div>
-
+<div class="reports">
 <div class="reports">
 
   <!-- گزارش ۱: ۱۷ شهریور -->
@@ -164,25 +333,56 @@ footer{text-align:center;color:#666;font-size:10px;padding-top:28px}
 
     <div class="report-gallery">
 
-      <img src="file_00000000142081f4a98e6146d9a0e812.png"
-           alt="۱۷ شهریورماه - عکس ۱">
+      <div class="report-track">
 
-      <img src="file_00000000d17482109c9a88afbf751dd6.png"
-           alt="۱۷ شهریورماه - عکس ۲">
+        <div class="report-slide active">
+          <img src="file_00000000142081f4a98e6146d9a0e812.png"
+               alt="۱۷ شهریورماه - عکس ۱">
+        </div>
 
-      <img src="file_00000000fbc881f4a146cba041142c84.png"
-           alt="۱۷ شهریورماه - عکس ۳">
+        <div class="report-slide">
+          <img src="file_00000000d17482109c9a88afbf751dd6.png"
+               alt="۱۷ شهریورماه - عکس ۲">
+        </div>
+
+        <div class="report-slide">
+          <img src="file_00000000fbc881f4a146cba041142c84.png"
+               alt="۱۷ شهریورماه - عکس ۳">
+        </div>
+
+      </div>
+
+      <!-- نوار نقطه‌ها -->
+      <div class="report-controls">
+        <div class="report-dots">
+
+          <button class="report-dot active"
+                  type="button"
+                  aria-label="عکس ۱"></button>
+
+          <button class="report-dot"
+                  type="button"
+                  aria-label="عکس ۲"></button>
+
+          <button class="report-dot"
+                  type="button"
+                  aria-label="عکس ۳"></button>
+
+        </div>
+      </div>
+
+      <!-- افکت تغییر عکس -->
+      <div class="report-flash"></div>
 
     </div>
 
+    <!-- اطلاعات جدا از عکس -->
     <div class="report-info">
       <b>۱۷ شهریورماه</b>
       <small>روضه هفتگی به نیت فرج امام زمان (عج)</small>
     </div>
 
   </article>
-
-  <!-- گزارش مراسم بعدی را اینجا اضافه می‌کنیم -->
 
 </div>
 </section>
@@ -230,38 +430,300 @@ footer{text-align:center;color:#666;font-size:10px;padding-top:28px}
 <footer>هیئت معظم حسینیون • بندرعباس</footer>
 </main>
   <script>
+<script>
 document.querySelectorAll('.report-card').forEach(card => {
-  const gallery = card.querySelector('.report-gallery');
-  const dots = [...card.querySelectorAll('.report-dot')];
 
-  const updateDots = () => {
-    const index = Math.max(
-      0,
-      Math.min(
-        dots.length - 1,
-        Math.round(gallery.scrollLeft / Math.max(gallery.clientWidth, 1))
-      )
-    );
+  const gallery = card.querySelector('.report-gallery');
+  const track = card.querySelector('.report-track');
+  const slides = [...card.querySelectorAll('.report-slide')];
+  const dots = [...card.querySelectorAll('.report-dot')];
+  const flash = card.querySelector('.report-flash');
+
+  let current = 0;
+
+  let startX = 0;
+  let currentX = 0;
+  let dragging = false;
+  let startTime = 0;
+
+
+  /* =========================
+     رفتن به اسلاید
+  ========================= */
+
+  function goTo(index, animate = true){
+
+    if(index < 0){
+      index = slides.length - 1;
+    }
+
+    if(index >= slides.length){
+      index = 0;
+    }
+
+    current = index;
+
+    track.style.transition = animate
+      ? 'transform .55s cubic-bezier(.22,.61,.36,1)'
+      : 'none';
+
+    track.style.transform =
+      `translate3d(-${current * 100}%,0,0)`;
+
+
+    /* نقطه فعال */
 
     dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === index);
+      dot.classList.toggle(
+        'active',
+        i === current
+      );
     });
-  };
 
-  gallery.addEventListener('scroll', () => {
-    requestAnimationFrame(updateDots);
-  }, { passive: true });
 
-  dots.forEach((dot, i) => {
+    /* عکس فعال */
+
+    slides.forEach((slide, i) => {
+      slide.classList.toggle(
+        'active',
+        i === current
+      );
+    });
+
+
+    /* افکت */
+
+    if(animate){
+
+      flash.classList.remove('play');
+
+      void flash.offsetWidth;
+
+      flash.classList.add('play');
+
+    }
+
+  }
+
+
+  /* =========================
+     کلیک روی نقطه
+  ========================= */
+
+  dots.forEach((dot, index) => {
+
     dot.addEventListener('click', () => {
-      gallery.scrollTo({
-        left: i * gallery.clientWidth,
-        behavior: 'smooth'
-      });
+
+      goTo(index);
+
     });
+
   });
 
-  updateDots();
+
+  /* =========================
+     شروع لمس
+  ========================= */
+
+  gallery.addEventListener(
+    'touchstart',
+    e => {
+
+      startX = e.touches[0].clientX;
+      currentX = startX;
+
+      startTime = Date.now();
+
+      dragging = true;
+
+      track.style.transition = 'none';
+
+    },
+    {passive:true}
+  );
+
+
+  /* =========================
+     حرکت لمس
+  ========================= */
+
+  gallery.addEventListener(
+    'touchmove',
+    e => {
+
+      if(!dragging) return;
+
+      currentX = e.touches[0].clientX;
+
+      const delta =
+        currentX - startX;
+
+      const percent =
+        (delta / gallery.clientWidth) * 100;
+
+      const base =
+        -(current * 100);
+
+      track.style.transform =
+        `translate3d(${base + percent}%,0,0)`;
+
+    },
+    {passive:true}
+  );
+
+
+  /* =========================
+     پایان لمس
+  ========================= */
+
+  gallery.addEventListener(
+    'touchend',
+    () => {
+
+      if(!dragging) return;
+
+      dragging = false;
+
+      const delta =
+        currentX - startX;
+
+      const elapsed =
+        Date.now() - startTime;
+
+      const velocity =
+        Math.abs(delta) /
+        Math.max(elapsed,1);
+
+      const threshold =
+        Math.min(
+          gallery.clientWidth * .18,
+          100
+        );
+
+
+      /* عکس قبلی */
+
+      if(
+        delta > threshold ||
+        (delta > 40 && velocity > .5)
+      ){
+
+        goTo(current - 1);
+
+      }
+
+      /* عکس بعدی */
+
+      else if(
+        delta < -threshold ||
+        (delta < -40 && velocity > .5)
+      ){
+
+        goTo(current + 1);
+
+      }
+
+      /* برگشت */
+
+      else{
+
+        goTo(current);
+
+      }
+
+    }
+  );
+
+
+  /* =========================
+     موس برای کامپیوتر
+  ========================= */
+
+  gallery.addEventListener(
+    'mousedown',
+    e => {
+
+      startX = e.clientX;
+      currentX = startX;
+
+      startTime = Date.now();
+
+      dragging = true;
+
+      track.style.transition = 'none';
+
+    }
+  );
+
+
+  window.addEventListener(
+    'mousemove',
+    e => {
+
+      if(!dragging) return;
+
+      currentX = e.clientX;
+
+      const delta =
+        currentX - startX;
+
+      const percent =
+        (delta / gallery.clientWidth) * 100;
+
+      const base =
+        -(current * 100);
+
+      track.style.transform =
+        `translate3d(${base + percent}%,0,0)`;
+
+    }
+  );
+
+
+  window.addEventListener(
+    'mouseup',
+    () => {
+
+      if(!dragging) return;
+
+      dragging = false;
+
+      const delta =
+        currentX - startX;
+
+      const threshold =
+        Math.min(
+          gallery.clientWidth * .18,
+          100
+        );
+
+
+      if(delta > threshold){
+
+        goTo(current - 1);
+
+      }
+
+      else if(delta < -threshold){
+
+        goTo(current + 1);
+
+      }
+
+      else{
+
+        goTo(current);
+
+      }
+
+    }
+  );
+
+
+  /* شروع */
+
+  goTo(0, false);
+
 });
 </script>
 </body>
