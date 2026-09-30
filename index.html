@@ -6,10 +6,7 @@
 
 <title>هیئت معظم حسینیون</title>
 
-<meta name="description" content="هیئت معظم حسینیون - رسانه، مراسم و ارتباط با هیئت">
-
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
 
 *{
@@ -43,14 +40,12 @@ body::before{
     z-index:-1;
 }
 
-/* ================= CONTAINER ================= */
-
 .container{
     width:min(94%,720px);
     margin:auto;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 
 .hero{
     min-height:470px;
@@ -77,6 +72,7 @@ body::before{
     z-index:2;
 }
 
+/* فقط لوگو اینجاست */
 .logo-wrap{
     width:145px;
     height:145px;
@@ -87,7 +83,6 @@ body::before{
     box-shadow:
         0 0 0 1px rgba(255,255,255,.05),
         0 0 40px rgba(120,0,0,.28);
-    animation:floatLogo 5s ease-in-out infinite;
 }
 
 .logo-wrap img{
@@ -98,20 +93,10 @@ body::before{
     background:#090909;
 }
 
-@keyframes floatLogo{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-7px);
-    }
-}
-
 .hero h1{
     margin-top:25px;
     font-size:30px;
     font-weight:800;
-    letter-spacing:-1px;
 }
 
 .hero p{
@@ -126,10 +111,9 @@ body::before{
     background:#8c0000;
     margin:20px auto;
     border-radius:20px;
-    box-shadow:0 0 15px rgba(140,0,0,.5);
 }
 
-/* ================= SECTION ================= */
+/* SECTION */
 
 section{
     padding:22px 0;
@@ -147,15 +131,13 @@ section{
     height:25px;
     background:#8d0000;
     border-radius:20px;
-    box-shadow:0 0 12px rgba(141,0,0,.5);
 }
 
 .section-title h2{
     font-size:18px;
-    font-weight:700;
 }
 
-/* ================= REPORTAGE ================= */
+/* REPORTAGE */
 
 .report-card{
     background:linear-gradient(
@@ -167,7 +149,6 @@ section{
     border-radius:24px;
     padding:12px;
     overflow:hidden;
-    box-shadow:0 20px 60px rgba(0,0,0,.35);
 }
 
 .report-images{
@@ -179,12 +160,17 @@ section{
     overscroll-behavior-x:contain;
     -webkit-overflow-scrolling:touch;
     scrollbar-width:none;
+
+    /* برای اینکه اسلایدها درست کار کنند */
+    direction:ltr;
+    touch-action:pan-x;
 }
 
 .report-images::-webkit-scrollbar{
     display:none;
 }
 
+/* فقط عکس‌های گزارش تصویری */
 .report-images img{
     flex:0 0 100%;
     width:100%;
@@ -202,7 +188,6 @@ section{
 
 .report-info h3{
     font-size:16px;
-    font-weight:700;
 }
 
 .report-info p{
@@ -211,7 +196,7 @@ section{
     color:#888;
 }
 
-/* ================= DOTS ================= */
+/* DOTS */
 
 .gallery-dots{
     display:flex;
@@ -225,26 +210,20 @@ section{
     width:6px;
     height:6px;
     padding:0;
-    margin:0;
     border:none;
-    outline:none;
     border-radius:50px;
     background:#333;
     cursor:pointer;
-    transition:
-        width .25s ease,
-        background .25s ease,
-        transform .25s ease;
+    transition:.25s;
 }
 
 .gallery-dots button.active{
     width:20px;
     background:#8d0000;
-    transform:scale(1.05);
     box-shadow:0 0 8px rgba(141,0,0,.45);
 }
 
-/* ================= SOCIAL ================= */
+/* SOCIAL */
 
 .social-grid{
     display:grid;
@@ -255,25 +234,17 @@ section{
 .social-card{
     text-decoration:none;
     color:#fff;
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.055),
-            rgba(255,255,255,.018)
-        );
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.055),
+        rgba(255,255,255,.018)
+    );
     border:1px solid rgba(255,255,255,.07);
     border-radius:19px;
     padding:17px 14px;
     display:flex;
     align-items:center;
     gap:12px;
-    transition:.25s ease;
-}
-
-.social-card:hover{
-    transform:translateY(-3px);
-    border-color:rgba(150,0,0,.45);
-    background:rgba(120,0,0,.08);
 }
 
 .social-icon{
@@ -296,10 +267,6 @@ section{
     stroke-width:1.8;
 }
 
-.social-text{
-    min-width:0;
-}
-
 .social-text strong{
     display:block;
     font-size:13px;
@@ -311,13 +278,9 @@ section{
     color:#777;
     font-size:10px;
     direction:ltr;
-    text-align:right;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
 }
 
-/* ================= SHUBAYER ================= */
+/* SHUBAYER */
 
 .media-card{
     margin-top:12px;
@@ -327,12 +290,11 @@ section{
     gap:15px;
     padding:18px;
     border-radius:22px;
-    background:
-        linear-gradient(
-            135deg,
-            rgba(130,0,0,.18),
-            rgba(255,255,255,.025)
-        );
+    background:linear-gradient(
+        135deg,
+        rgba(130,0,0,.18),
+        rgba(255,255,255,.025)
+    );
     border:1px solid rgba(255,255,255,.07);
 }
 
@@ -347,11 +309,9 @@ section{
     height:48px;
     border-radius:15px;
     background:#0b0b0b;
-    border:1px solid rgba(255,255,255,.08);
     display:flex;
     align-items:center;
     justify-content:center;
-    color:#fff;
     font-size:25px;
     font-weight:800;
 }
@@ -375,14 +335,9 @@ section{
     padding:9px 13px;
     border-radius:12px;
     background:#720000;
-    transition:.2s;
 }
 
-.media-btn:hover{
-    background:#970000;
-}
-
-/* ================= SCHEDULE ================= */
+/* SCHEDULE */
 
 .schedule{
     text-align:center;
@@ -408,7 +363,6 @@ section{
     font-weight:800;
     margin:8px 0;
     direction:ltr;
-    letter-spacing:2px;
 }
 
 .schedule-label{
@@ -416,7 +370,7 @@ section{
     font-size:12px;
 }
 
-/* ================= CONTACT ================= */
+/* CONTACT */
 
 .contact-card{
     padding:20px;
@@ -433,7 +387,6 @@ section{
     font-size:24px;
     font-weight:700;
     text-decoration:none;
-    letter-spacing:1px;
 }
 
 .phone-label{
@@ -453,7 +406,7 @@ section{
     font-size:12px;
 }
 
-/* ================= ADDRESS ================= */
+/* ADDRESS */
 
 .address-card{
     padding:20px;
@@ -485,15 +438,9 @@ section{
     background:#101010;
     border:1px solid rgba(255,255,255,.07);
     font-size:12px;
-    transition:.2s;
 }
 
-.map-btn:hover{
-    border-color:#7d0000;
-    background:rgba(120,0,0,.08);
-}
-
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
     padding:45px 20px 30px;
@@ -505,8 +452,6 @@ footer{
 footer strong{
     color:#777;
 }
-
-/* ================= MOBILE ================= */
 
 @media(max-width:430px){
 
@@ -534,30 +479,20 @@ footer strong{
         min-width:38px;
     }
 
-    .social-text strong{
-        font-size:12px;
-    }
-
-    .social-text small{
-        font-size:9px;
-    }
-
     .schedule-time{
         font-size:46px;
     }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- ================= HERO ================= -->
-
 <header class="hero">
 
     <div class="profile">
 
+        <!-- لوگو: فقط همین فایل -->
         <div class="logo-wrap">
             <img
                 src="file_00000000142081f4a98e6146d9a0e812.png"
@@ -579,7 +514,7 @@ footer strong{
 <main class="container">
 
 
-<!-- ================= REPORTAGE ================= -->
+<!-- ================= گزارش تصویری ================= -->
 
 <section>
 
@@ -592,36 +527,44 @@ footer strong{
 
         <div class="report-images" id="reportGallery">
 
+            <!-- عکس گزارش ۱ -->
             <img
                 src="IMG_20251102_193153_076.webp"
                 alt="گزارش تصویری هیئت"
                 draggable="false"
             >
 
+            <!-- عکس گزارش ۲ -->
             <img
                 src="file_00000000d17482109c9a88afbf751dd6.png"
                 alt="گزارش تصویری هیئت"
                 draggable="false"
             >
 
+            <!-- عکس گزارش ۳ -->
             <img
                 src="file_00000000fbc881f4a146cba041142c84.png"
                 alt="گزارش تصویری هیئت"
                 draggable="false"
             >
 
-            <img
-                src="file_00000000d17482109c9a88afbf751dd6.png"
-                alt="گزارش تصویری هیئت"
-                draggable="false"
-            >
-
         </div>
+
 
         <div class="report-info">
-            <h3>روضه هفتگی به نیت فرج امام زمان (عج)</h3>
-            <p>گزارش تصویری هیئت معظم حسینیون</p>
+
+            <h3>
+                روضه هفتگی به نیت فرج امام زمان (عج)
+            </h3>
+
+            <p>
+                گزارش تصویری هیئت معظم حسینیون
+            </p>
+
         </div>
+
+
+        <!-- فقط ۳ کپسول چون فقط ۳ عکس داریم -->
 
         <div class="gallery-dots" id="galleryDots">
 
@@ -641,11 +584,6 @@ footer strong{
                 aria-label="تصویر سوم"
             ></button>
 
-            <button
-                data-slide="3"
-                aria-label="تصویر چهارم"
-            ></button>
-
         </div>
 
     </div>
@@ -653,7 +591,7 @@ footer strong{
 </section>
 
 
-<!-- ================= SOCIAL ================= -->
+<!-- ================= فضای مجازی ================= -->
 
 <section>
 
@@ -662,136 +600,87 @@ footer strong{
         <h2>فضای مجازی</h2>
     </div>
 
-
     <div class="social-grid">
-
-
-        <!-- Instagram -->
 
         <a
             class="social-card"
             href="https://www.instagram.com/husseiniyun.bnd?stkn=MXhqN2xuMzY4ZnR0NA=="
             target="_blank"
         >
-
             <div class="social-icon">
-
                 <svg viewBox="0 0 24 24">
-                    <rect
-                        x="3"
-                        y="3"
-                        width="18"
-                        height="18"
-                        rx="5"
-                    ></rect>
-
-                    <circle
-                        cx="12"
-                        cy="12"
-                        r="4"
-                    ></circle>
-
-                    <circle
-                        cx="17.5"
-                        cy="6.5"
-                        r="1"
+                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle cx="17.5" cy="6.5" r="1"
                         fill="white"
-                        stroke="none"
-                    ></circle>
+                        stroke="none">
+                    </circle>
                 </svg>
-
             </div>
 
             <div class="social-text">
                 <strong>اینستاگرام هیئت</strong>
                 <small>@husseiniyun.bnd</small>
             </div>
-
         </a>
 
-
-        <!-- Telegram -->
 
         <a
             class="social-card"
             href="https://t.me/husseniyun_bnd"
             target="_blank"
         >
-
             <div class="social-icon">
-
                 <svg viewBox="0 0 24 24">
-                    <path
-                        d="M21 4L3.5 10.7c-.8.3-.8 1.4 0 1.7l4.5 1.5 1.7 5.3c.2.7 1.1.9 1.6.4l2.5-2.6 4.5 3.3c.6.4 1.4.1 1.6-.6L23 5.2c.2-.9-1-1.6-2-1.2Z"
-                    ></path>
+                    <path d="M21 4L3.5 10.7c-.8.3-.8 1.4 0 1.7l4.5 1.5 1.7 5.3c.2.7 1.1.9 1.6.4l2.5-2.6 4.5 3.3c.6.4 1.4.1 1.6-.6L23 5.2c.2-.9-1-1.6-2-1.2Z"></path>
                     <path d="M8 13.9L18.5 7"></path>
                 </svg>
-
             </div>
 
             <div class="social-text">
                 <strong>تلگرام</strong>
                 <small>@husseniyun_bnd</small>
             </div>
-
         </a>
 
-
-        <!-- Rubika -->
 
         <a
             class="social-card"
             href="https://rubika.ir/husseniyun_bnd"
             target="_blank"
         >
-
             <div class="social-icon">
-
                 <svg viewBox="0 0 24 24">
-                    <path
-                        d="M7 4h10a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-4l-4 4v-4H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Z"
-                    ></path>
+                    <path d="M7 4h10a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-4l-4 4v-4H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Z"></path>
                 </svg>
-
             </div>
 
             <div class="social-text">
                 <strong>روبیکا</strong>
                 <small>@husseniyun_bnd</small>
             </div>
-
         </a>
 
-
-        <!-- Eitaa -->
 
         <a
             class="social-card"
             href="https://eitaa.com/husseniyun_bnd"
             target="_blank"
         >
-
             <div class="social-icon">
-
                 <svg viewBox="0 0 24 24">
-                    <path
-                        d="M12 3.5c-5 0-9 3.5-9 8 0 2.5 1.4 4.8 3.7 6.2L6 21l4-2c.7.2 1.3.3 2 .3 5 0 9-3.5 9-7.8s-4-8-9-8Z"
-                    ></path>
+                    <path d="M12 3.5c-5 0-9 3.5-9 8 0 2.5 1.4 4.8 3.7 6.2L6 21l4-2c.7.2 1.3.3 2 .3 5 0 9-3.5 9-7.8s-4-8-9-8Z"></path>
                 </svg>
-
             </div>
 
             <div class="social-text">
                 <strong>ایتا</strong>
                 <small>@husseniyun_bnd</small>
             </div>
-
         </a>
 
     </div>
 
-
-    <!-- Shubayer Media -->
 
     <div class="media-card">
 
@@ -821,7 +710,7 @@ footer strong{
 </section>
 
 
-<!-- ================= SCHEDULE ================= -->
+<!-- ================= زمان برگزاری ================= -->
 
 <section>
 
@@ -849,7 +738,7 @@ footer strong{
 </section>
 
 
-<!-- ================= CONTACT ================= -->
+<!-- ================= تماس ================= -->
 
 <section>
 
@@ -883,7 +772,7 @@ footer strong{
 </section>
 
 
-<!-- ================= ADDRESS ================= -->
+<!-- ================= آدرس ================= -->
 
 <section>
 
@@ -924,11 +813,8 @@ footer strong{
 
 </section>
 
-
 </main>
 
-
-<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -941,7 +827,7 @@ footer strong{
 </footer>
 
 
-<!-- ================= GALLERY SCRIPT ================= -->
+<!-- ================= اسکریپت گزارش تصویری ================= -->
 
 <script>
 
@@ -953,43 +839,40 @@ if(gallery && dots.length){
     const slides = gallery.querySelectorAll("img");
 
 
-    /*
-    ============================
-    پیدا کردن عکس فعال
-    بر اساس مرکز واقعی عکس
-    ============================
-    */
-
     function updateDots(){
 
         if(!slides.length) return;
 
+        const galleryRect =
+            gallery.getBoundingClientRect();
+
         const galleryCenter =
-            gallery.scrollLeft +
-            (gallery.clientWidth / 2);
+            galleryRect.left +
+            galleryRect.width / 2;
 
         let activeIndex = 0;
-
         let closestDistance = Infinity;
 
 
         slides.forEach((slide,index)=>{
 
+            const rect =
+                slide.getBoundingClientRect();
+
             const slideCenter =
-                slide.offsetLeft +
-                (slide.offsetWidth / 2);
+                rect.left +
+                rect.width / 2;
 
             const distance =
                 Math.abs(
-                    galleryCenter -
-                    slideCenter
+                    slideCenter -
+                    galleryCenter
                 );
 
 
             if(distance < closestDistance){
 
                 closestDistance = distance;
-
                 activeIndex = index;
 
             }
@@ -1009,26 +892,33 @@ if(gallery && dots.length){
     }
 
 
-    /*
-    ============================
-    اسکرول دستی
-    ============================
-    */
+    /* تشخیص لحظه‌ای هنگام کشیدن عکس */
+
+    let animationFrame = 0;
 
     gallery.addEventListener(
         "scroll",
-        updateDots,
+        ()=>{
+
+            if(animationFrame) return;
+
+            animationFrame =
+                requestAnimationFrame(()=>{
+
+                    animationFrame = 0;
+
+                    updateDots();
+
+                });
+
+        },
         {
             passive:true
         }
     );
 
 
-    /*
-    ============================
-    کلیک روی کپسول
-    ============================
-    */
+    /* کلیک روی کپسول‌ها */
 
     dots.forEach(dot=>{
 
@@ -1041,20 +931,19 @@ if(gallery && dots.length){
                         dot.dataset.slide
                     );
 
-
                 const slide =
                     slides[index];
-
 
                 if(!slide) return;
 
 
-                gallery.scrollTo({
+                slide.scrollIntoView({
 
-                    left:
-                        slide.offsetLeft,
+                    behavior:"smooth",
 
-                    behavior:"smooth"
+                    block:"nearest",
+
+                    inline:"center"
 
                 });
 
@@ -1064,47 +953,20 @@ if(gallery && dots.length){
     });
 
 
-    /*
-    ============================
-    تشخیص نهایی بعد از اسکرول
-    ============================
-    */
-
-    let scrollTimer;
-
-    gallery.addEventListener(
-        "scroll",
-        ()=>{
-
-            clearTimeout(scrollTimer);
-
-            scrollTimer =
-                setTimeout(
-                    updateDots,
-                    80
-                );
-
-        },
-        {
-            passive:true
-        }
-    );
-
-
-    /*
-    ============================
-    شروع
-    ============================
-    */
-
-    window.addEventListener(
-        "load",
-        updateDots
-    );
-
     window.addEventListener(
         "resize",
         updateDots
+    );
+
+
+    window.addEventListener(
+        "load",
+        ()=>{
+            setTimeout(
+                updateDots,
+                50
+            );
+        }
     );
 
 
@@ -1113,7 +975,6 @@ if(gallery && dots.length){
 }
 
 </script>
-
 
 </body>
 </html>
