@@ -108,6 +108,35 @@ h1{font-size:22px;margin:0 0 6px}
 .map-buttons a{padding:12px;text-align:center;border-radius:12px;background:#171717;border:1px solid var(--line);font-size:11px}
 footer{text-align:center;color:#666;font-size:10px;padding-top:28px}
 @media(max-width:380px){.grid{grid-template-columns:1fr}.report{min-width:88%}}
+  .report-dots{
+  display:flex;
+  justify-content:center;
+  gap:6px;
+  padding:7px 0 2px;
+  direction:ltr;
+}
+
+.report-dot{
+  width:6px;
+  height:6px;
+  border:0;
+  padding:0;
+  border-radius:50%;
+  background:#777;
+  opacity:.6;
+  transition:all .25s ease;
+}
+
+.report-dot.active{
+  width:16px;
+  border-radius:99px;
+  opacity:1;
+  background:#d12a2a;
+}
+
+.report-gallery{
+  scroll-behavior:smooth;
+}
 </style>
 </head>
 <body>
@@ -121,6 +150,11 @@ footer{text-align:center;color:#666;font-size:10px;padding-top:28px}
 </header>
 
 <section>
+  <div class="report-dots">
+  <button class="report-dot active" type="button"></button>
+  <button class="report-dot" type="button"></button>
+  <button class="report-dot" type="button"></button>
+  </div>
 <div class="section-title">گزارش‌های تصویری</div>
 
 <div class="reports">
@@ -195,5 +229,40 @@ footer{text-align:center;color:#666;font-size:10px;padding-top:28px}
 
 <footer>هیئت معظم حسینیون • بندرعباس</footer>
 </main>
+  <script>
+document.querySelectorAll('.report-card').forEach(card => {
+  const gallery = card.querySelector('.report-gallery');
+  const dots = [...card.querySelectorAll('.report-dot')];
+
+  const updateDots = () => {
+    const index = Math.max(
+      0,
+      Math.min(
+        dots.length - 1,
+        Math.round(gallery.scrollLeft / Math.max(gallery.clientWidth, 1))
+      )
+    );
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  };
+
+  gallery.addEventListener('scroll', () => {
+    requestAnimationFrame(updateDots);
+  }, { passive: true });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      gallery.scrollTo({
+        left: i * gallery.clientWidth,
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  updateDots();
+});
+</script>
 </body>
 </html>
