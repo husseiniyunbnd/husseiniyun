@@ -2,19 +2,27 @@
 <html lang="fa" dir="rtl">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>هیئت معظم حسینیون | بندرعباس</title>
 
-  <meta name="description"
-    content="هیئت معظم حسینیون بندرعباس | روضه هفتگی | گزارش‌های تصویری">
+  <meta
+    name="description"
+    content="هیئت معظم حسینیون بندرعباس"
+  >
+
 
   <style>
 
-    /* =========================
+    /* ==================================================
        RESET
-    ========================= */
+    ================================================== */
 
     * {
       margin: 0;
@@ -28,16 +36,24 @@
 
     body {
       direction: rtl;
-      font-family: Tahoma, Arial, sans-serif;
+
+      min-height: 100vh;
+
       background:
         radial-gradient(
           circle at top,
-          rgba(120, 0, 0, 0.20),
+          rgba(110, 0, 0, 0.18),
           transparent 38%
         ),
-        #070707;
+        #080808;
+
       color: #fff;
-      min-height: 100vh;
+
+      font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
       line-height: 1.8;
     }
 
@@ -47,90 +63,106 @@
     }
 
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
 
-    /* =========================
-       MAIN CONTAINER
-    ========================= */
+
+    /* ==================================================
+       CONTAINER
+    ================================================== */
 
     .container {
-      width: min(92%, 650px);
+      width: 92%;
+      max-width: 650px;
+
       margin: 0 auto;
     }
 
-    /* =========================
+
+    /* ==================================================
        HEADER
-    ========================= */
+    ================================================== */
 
     header {
       text-align: center;
-      padding: 35px 0 20px;
+
+      padding: 32px 0 18px;
     }
 
     .logo {
-      width: 105px;
-      height: 105px;
+      width: 92px;
+      height: 92px;
+
       object-fit: cover;
+
       border-radius: 50%;
 
-      border: 1px solid rgba(255,255,255,0.15);
+      margin: 0 auto 12px;
+
+      border: 1px solid rgba(255,255,255,0.14);
 
       box-shadow:
-        0 0 35px rgba(130,0,0,0.25),
-        0 0 0 6px rgba(255,255,255,0.02);
-
-      margin: 0 auto 15px;
+        0 0 30px rgba(130,0,0,0.25),
+        0 0 0 5px rgba(255,255,255,0.015);
     }
 
     .title {
-      font-size: 24px;
+      font-size: 22px;
+
       font-weight: bold;
-      margin-bottom: 5px;
+
+      margin-bottom: 3px;
     }
 
     .subtitle {
-      color: #999;
-      font-size: 13px;
+      color: #888;
+
+      font-size: 12px;
     }
 
-    /* =========================
+
+    /* ==================================================
        SECTIONS
-    ========================= */
+    ================================================== */
 
     section {
-      margin-top: 22px;
+      margin-top: 20px;
     }
 
     .section-title {
       font-size: 15px;
+
       font-weight: bold;
-      margin-bottom: 10px;
-      padding-right: 5px;
+
+      margin: 0 5px 9px;
     }
 
+
+    /* ==================================================
+       CARD
+    ================================================== */
+
     .card {
-      background: rgba(255,255,255,0.035);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: #101010;
+
+      border: 1px solid #222;
 
       border-radius: 18px;
 
-      padding: 17px;
+      padding: 15px;
 
       box-shadow:
-        0 10px 35px rgba(0,0,0,0.25);
-
-      backdrop-filter: blur(10px);
+        0 10px 35px rgba(0,0,0,0.22);
     }
 
-    /* =========================
+
+    /* ==================================================
        REPORTS
-    ========================= */
+    ================================================== */
 
     .reports-wrapper {
       display: flex;
-      gap: 14px;
 
       overflow-x: auto;
 
@@ -147,16 +179,19 @@
 
     .report {
       min-width: 100%;
+
       scroll-snap-align: center;
     }
 
-    /* =========================
+
+    /* ==================================================
        REPORT IMAGES
-    ========================= */
+    ================================================== */
 
     .report-images {
       display: flex;
-      gap: 10px;
+
+      gap: 9px;
 
       overflow-x: auto;
 
@@ -178,7 +213,7 @@
 
       width: 100%;
 
-      max-height: 500px;
+      height: 400px;
 
       object-fit: cover;
 
@@ -191,37 +226,44 @@
       -webkit-user-drag: none;
     }
 
-    /* =========================
+
+    /* ==================================================
        REPORT INFO
-    ========================= */
+    ================================================== */
 
     .report-info {
       text-align: center;
-      padding-top: 13px;
+
+      padding-top: 10px;
     }
 
     .report-info h3 {
-      font-size: 17px;
-      margin-bottom: 3px;
+      font-size: 18px;
+
+      margin-bottom: 2px;
     }
 
     .report-info p {
-      color: #aaa;
+      color: #999;
+
       font-size: 12px;
     }
 
-    /* =========================
-       DOTS
-    ========================= */
+
+    /* ==================================================
+       REPORT DOTS
+    ================================================== */
 
     .dots {
       display: flex;
+
       justify-content: center;
+
       align-items: center;
 
       gap: 6px;
 
-      margin-top: 12px;
+      margin-top: 9px;
     }
 
     .dot {
@@ -232,7 +274,7 @@
 
       background: #444;
 
-      transition: 0.3s;
+      transition: 0.25s;
     }
 
     .dot.active {
@@ -243,35 +285,44 @@
       background: #a40000;
     }
 
-    /* =========================
+
+    /* ==================================================
        SOCIAL
-    ========================= */
+       حالت شبیه نسخه اول
+    ================================================== */
+
+    .social-card {
+      padding: 16px;
+    }
 
     .social-grid {
       display: grid;
 
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
 
       gap: 10px;
     }
 
     .social {
+      height: 70px;
+
       display: flex;
 
       align-items: center;
+
       justify-content: center;
 
-      gap: 8px;
+      gap: 9px;
 
-      padding: 13px 8px;
+      background: #171717;
 
-      border-radius: 13px;
+      border: 1px solid #292929;
 
-      background: rgba(255,255,255,0.045);
-
-      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 15px;
 
       font-size: 13px;
+
+      color: #ddd;
 
       transition: 0.25s;
     }
@@ -279,56 +330,64 @@
     .social:hover {
       transform: translateY(-2px);
 
-      background: rgba(150,0,0,0.15);
+      background: #1d1d1d;
 
-      border-color: rgba(170,0,0,0.35);
+      border-color: #700000;
     }
 
     .social-icon {
-      font-size: 17px;
+      font-size: 18px;
+
+      color: #aaa;
     }
 
-    /* =========================
+
+    /* ==================================================
        SHUBAYER MEDIA
-    ========================= */
+    ================================================== */
 
     .media-card {
       text-align: center;
+
       padding: 20px;
     }
 
     .media-card h3 {
-      font-size: 17px;
-      margin-bottom: 4px;
+      font-size: 18px;
+
+      margin-bottom: 3px;
     }
 
     .media-card p {
+      color: #777;
+
       font-size: 12px;
-      color: #999;
-      margin-bottom: 14px;
+
+      margin-bottom: 13px;
     }
 
     .media-button {
       display: inline-block;
 
-      padding: 10px 20px;
+      padding: 10px 23px;
 
-      border-radius: 12px;
+      border-radius: 11px;
 
-      background: #8d0000;
+      background: #900000;
 
-      font-size: 13px;
+      font-size: 12px;
 
       transition: 0.25s;
     }
 
     .media-button:hover {
-      background: #b00000;
+      background: #ae0000;
     }
 
-    /* =========================
-       INFO
-    ========================= */
+
+    /* ==================================================
+       INFORMATION
+    ================================================== */
 
     .info-row {
       display: flex;
@@ -341,58 +400,70 @@
     }
 
     .info-label {
-      color: #999;
-      font-size: 12px;
+      color: #777;
+
+      font-size: 11px;
+
+      margin-bottom: 2px;
     }
 
     .info-value {
-      font-size: 15px;
+      color: #ddd;
+
+      font-size: 14px;
+
       font-weight: bold;
     }
 
     .info-large {
-      font-size: 23px;
-      color: #fff;
+      font-size: 22px;
+
       font-weight: bold;
+
+      color: #fff;
     }
 
-    /* =========================
-       BUTTON
-    ========================= */
+
+    /* ==================================================
+       CONTACT BUTTON
+    ================================================== */
 
     .button {
       display: block;
 
       text-align: center;
 
-      margin-top: 13px;
+      margin-top: 11px;
 
-      padding: 12px;
+      padding: 10px;
 
-      border-radius: 12px;
+      border-radius: 11px;
 
-      background: rgba(150,0,0,0.12);
+      background:
+        rgba(140,0,0,0.14);
 
-      border: 1px solid rgba(180,0,0,0.3);
+      border: 1px solid rgba(170,0,0,0.35);
 
-      font-size: 13px;
+      font-size: 12px;
 
       transition: 0.25s;
     }
 
     .button:hover {
-      background: #8d0000;
-      border-color: #8d0000;
+      background: #850000;
+
+      border-color: #850000;
     }
 
-    /* =========================
+
+    /* ==================================================
        ADDRESS
-    ========================= */
+    ================================================== */
 
     .address {
-      font-size: 13px;
-
       color: #ddd;
+
+      font-size: 13px;
 
       line-height: 2;
 
@@ -406,46 +477,52 @@
 
       gap: 9px;
 
-      margin-top: 13px;
+      margin-top: 12px;
     }
 
     .map-button {
       text-align: center;
 
-      padding: 11px 5px;
+      padding: 10px 5px;
 
       border-radius: 11px;
 
-      background: rgba(255,255,255,0.04);
+      background: #161616;
 
-      border: 1px solid rgba(255,255,255,0.07);
+      border: 1px solid #292929;
 
-      font-size: 12px;
+      color: #bbb;
+
+      font-size: 11px;
 
       transition: 0.25s;
     }
 
     .map-button:hover {
-      background: rgba(150,0,0,0.15);
+      background: #1d1d1d;
+
+      border-color: #700000;
     }
 
-    /* =========================
+
+    /* ==================================================
        FOOTER
-    ========================= */
+    ================================================== */
 
     footer {
       text-align: center;
 
-      color: #555;
+      color: #4c4c4c;
 
-      font-size: 11px;
+      font-size: 10px;
 
-      padding: 35px 0 25px;
+      padding: 32px 0 22px;
     }
 
-    /* =========================
+
+    /* ==================================================
        MOBILE
-    ========================= */
+    ================================================== */
 
     @media (max-width: 480px) {
 
@@ -454,24 +531,58 @@
       }
 
       header {
-        padding-top: 28px;
+        padding-top: 26px;
       }
 
       .logo {
-        width: 95px;
-        height: 95px;
+        width: 82px;
+        height: 82px;
       }
 
       .title {
         font-size: 21px;
       }
 
+      .subtitle {
+        font-size: 11px;
+      }
+
+      section {
+        margin-top: 19px;
+      }
+
+      .card {
+        padding: 14px;
+      }
+
       .report-images img {
-        max-height: 470px;
+        height: 370px;
+      }
+
+      .social-card {
+        padding: 15px;
       }
 
       .social {
+        height: 66px;
+
         font-size: 12px;
+      }
+
+      .social-icon {
+        font-size: 17px;
+      }
+
+      .media-card {
+        padding: 17px;
+      }
+
+      .media-card h3 {
+        font-size: 17px;
+      }
+
+      .info-large {
+        font-size: 20px;
       }
 
     }
@@ -483,12 +594,13 @@
 
 <body>
 
+
   <main class="container">
 
 
-    <!-- =========================
+    <!-- ==================================================
          HEADER
-    ========================= -->
+    ================================================== -->
 
     <header>
 
@@ -509,9 +621,9 @@
     </header>
 
 
-    <!-- =========================
+    <!-- ==================================================
          REPORTS
-    ========================= -->
+    ================================================== -->
 
     <section>
 
@@ -522,8 +634,6 @@
 
       <div class="reports-wrapper">
 
-
-        <!-- REPORT 1 -->
 
         <article class="report card">
 
@@ -581,9 +691,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- ==================================================
          SOCIAL
-    ========================= -->
+    ================================================== -->
 
     <section>
 
@@ -592,7 +702,7 @@
       </div>
 
 
-      <div class="card">
+      <div class="card social-card">
 
 
         <div class="social-grid">
@@ -618,7 +728,7 @@
           </a>
 
 
-          <!-- SHUBAYER -->
+          <!-- SHUBAYER MEDIA -->
 
           <a
             class="social"
@@ -707,25 +817,21 @@
     </section>
 
 
-    <!-- =========================
+    <!-- ==================================================
          SHUBAYER MEDIA
-    ========================= -->
+    ================================================== -->
 
     <section>
 
-
       <div class="card media-card">
-
 
         <h3>
           شُبَیر مدیا
         </h3>
 
-
         <p>
           رسانه هیئت معظم حسینیون
         </p>
-
 
         <a
           class="media-button"
@@ -736,20 +842,16 @@
           مشاهده صفحه
         </a>
 
-
       </div>
-
 
     </section>
 
 
-    <!-- =========================
+    <!-- ==================================================
          SCHEDULE
-         فقط یک بار
-    ========================= -->
+    ================================================== -->
 
     <section>
-
 
       <div class="section-title">
         زمان برگزاری
@@ -793,9 +895,9 @@
 
         <div
           style="
-            margin-top:12px;
-            color:#999;
-            font-size:12px;
+            margin-top:10px;
+            color:#888;
+            font-size:11px;
           "
         >
           هر سه‌شنبه
@@ -808,13 +910,11 @@
     </section>
 
 
-    <!-- =========================
+    <!-- ==================================================
          PHONE
-         فقط یک بار
-    ========================= -->
+    ================================================== -->
 
     <section>
-
 
       <div class="section-title">
         ارتباط با هیئت
@@ -857,13 +957,11 @@
     </section>
 
 
-    <!-- =========================
+    <!-- ==================================================
          ADDRESS
-         فقط یک بار
-    ========================= -->
+    ================================================== -->
 
     <section>
-
 
       <div class="section-title">
         آدرس هیئت
@@ -885,8 +983,6 @@
         <div class="map-buttons">
 
 
-          <!-- GOOGLE MAPS -->
-
           <a
             class="map-button"
             href="https://www.google.com/maps/search/?api=1&query=مسجد+حضرت+فاطمه+معصومه+بندرعباس+شهرک+طلائیه"
@@ -896,8 +992,6 @@
             مسیریابی با Google Maps
           </a>
 
-
-          <!-- NESHAN -->
 
           <a
             class="map-button"
@@ -918,9 +1012,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- ==================================================
          FOOTER
-    ========================= -->
+    ================================================== -->
 
     <footer>
 
@@ -936,20 +1030,14 @@
   </main>
 
 
-  <!-- =========================
+  <!-- ==================================================
        JAVASCRIPT
-  ========================= -->
+  ================================================== -->
 
   <script>
 
-
-    /* =========================
-       REPORT SLIDER
-    ========================= */
-
     const reportSlider =
       document.querySelector(".reports-wrapper");
-
 
     const dots =
       document.querySelectorAll(".dot");
@@ -969,7 +1057,7 @@
 
 
           dots.forEach(
-            function (dot, i) {
+            function(dot, i) {
 
               dot.classList.toggle(
                 "active",
@@ -979,12 +1067,10 @@
             }
           );
 
-
         }
       );
 
     }
-
 
   </script>
 
