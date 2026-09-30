@@ -134,6 +134,68 @@ background:#d12a2a;
 .report-gallery{
 scroll-behavior:smooth;
 }
+  .report-gallery{
+  width:100%;
+  height:100%;
+  display:flex;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+}
+
+.report-gallery::-webkit-scrollbar{
+  display:none;
+}
+
+.report-slide{
+  min-width:100%;
+  height:100%;
+  position:relative;
+  scroll-snap-align:start;
+  flex-shrink:0;
+}
+
+.report-slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.slide-dots{
+  position:absolute;
+  bottom:12px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:6px;
+  align-items:center;
+  padding:6px 9px;
+  background:rgba(0,0,0,.5);
+  border-radius:20px;
+  backdrop-filter:blur(8px);
+  direction:ltr;
+  z-index:5;
+}
+
+.report-dot{
+  width:6px;
+  height:6px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:#aaa;
+  opacity:.65;
+  transition:.35s ease;
+}
+
+.report-dot.active{
+  width:22px;
+  border-radius:20px;
+  background:#d12a2a;
+  opacity:1;
+}
 </style>
 
 </head>    
@@ -145,22 +207,43 @@ scroll-behavior:smooth;
   </div>    
   <h1>هیئت معظم حسینیون</h1>    
   <div class="sub">رسانه و راه‌های ارتباطی هیئت</div>    
-</header>  <section>    
-  <div class="report-dots">    
-  <button class="report-dot active" type="button"></button>    
-  <button class="report-dot" type="button"></button>    
-  <button class="report-dot" type="button"></button>    
-  </div>    
-<div class="section-title">گزارش‌های تصویری</div>  <div class="reports">    <!-- گزارش ۱: ۱۷ شهریور -->    <article class="report-card">  <div class="report-gallery">    <img src="file_00000000142081f4a98e6146d9a0e812.png"    
-alt="۱۷ شهریورماه - عکس ۱">
+</header> 
+  <section>    
+<div class="report-gallery">
 
-<img src="file_00000000d17482109c9a88afbf751dd6.png"    
-alt="۱۷ شهریورماه - عکس ۲">
+  <div class="report-slide">
+    <img src="file_00000000142081f4a98e6146d9a0e812.png" alt="۱۷ شهریورماه - عکس ۱">
 
-<img src="file_00000000fbc881f4a146cba041142c84.png"    
-alt="۱۷ شهریورماه - عکس ۳">
+    <div class="slide-dots">
+      <button class="report-dot active"></button>
+      <button class="report-dot"></button>
+      <button class="report-dot"></button>
+    </div>
+  </div>
 
-</div>    <div class="report-info">    
+  <div class="report-slide">
+    <img src="file_00000000d17482109c9a88afbf751dd6.png" alt="۱۷ شهریورماه - عکس ۲">
+
+    <div class="slide-dots">
+      <button class="report-dot"></button>
+      <button class="report-dot active"></button>
+      <button class="report-dot"></button>
+    </div>
+  </div>
+
+  <div class="report-slide">
+    <img src="file_00000000fbc881f4a146cba041142c84.png" alt="۱۷ شهریورماه - عکس ۳">
+
+    <div class="slide-dots">
+      <button class="report-dot"></button>
+      <button class="report-dot"></button>
+      <button class="report-dot active"></button>
+    </div>
+  </div>
+
+</div>
+
+  
   <b>۱۷ شهریورماه</b>    
   <small>روضه هفتگی به نیت فرج امام زمان (عج)</small>    
 </div>    </article>    <!-- گزارش مراسم بعدی را اینجا اضافه می‌کنیم -->  </div>    
@@ -232,5 +315,4 @@ updateDots();
 </script>
 
 </body>    
-</html>    می‌خوام طاها همین باشه
-ولی ظاهر گالری و اسلایدی بودنش به همین شکل که هست
+</html>
