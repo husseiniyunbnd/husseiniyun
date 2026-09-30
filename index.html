@@ -2,115 +2,121 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>هیئت معظم حسینیون</title>
+
 <style>
-*{box-sizing:border-box}
-:root{--bg:#080808;--card:#111;--line:#252525;--text:#f4f4f4;--muted:#a8a8a8;--red:#9d1717;--red2:#d12a2a}
-body{margin:0;background:radial-gradient(circle at top,#180707 0,#080808 34%,#050505 100%);color:var(--text);font-family:Tahoma,Arial,sans-serif}
-a{text-decoration:none;color:inherit}
-.page{width:min(100%,620px);margin:auto;padding:22px 16px 34px}
-header{text-align:center;padding:12px 4px 22px}
-.logo{width:68px;height:68px;border:1px solid #3b1515;border-radius:50%;display:grid;place-items:center;margin:0 auto 12px;background:#0d0d0d;box-shadow:0 0 35px #5b0b0b44}
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
+:root{
+  --bg:#070707;
+  --card:#101010;
+  --line:#252525;
+  --text:#f4f4f4;
+  --muted:#999;
+  --red:#a51616;
+  --red2:#d52b2b;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 50% -10%,#210707 0,#0a0808 25%,#050505 65%,#030303 100%);
+  color:var(--text);
+  font-family:Tahoma,Arial,sans-serif;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+}
+
+.page{
+  width:min(100%,620px);
+  margin:auto;
+  padding:22px 16px 36px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  text-align:center;
+  padding:12px 4px 24px;
+}
+
+.logo{
+  width:68px;
+  height:68px;
+  margin:0 auto 12px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:#0c0c0c;
+  border:1px solid #421414;
+  box-shadow:
+    0 0 25px rgba(120,0,0,.16),
+    inset 0 0 18px rgba(255,255,255,.025);
+}
+
 .logo img{
   width:100%;
   height:100%;
   object-fit:contain;
-  border-radius:50%;
   display:block;
 }
-h1{font-size:22px;margin:0 0 6px}
-.sub{font-size:12px;color:var(--muted)}
-.section-title{display:flex;align-items:center;gap:9px;margin:20px 2px 11px;font-size:14px;font-weight:bold}
-.section-title:before{content:"";width:3px;height:17px;background:var(--red2);border-radius:5px}
-.slider{display:flex;gap:11px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:5px;scrollbar-width:none}
-.slider::-webkit-scrollbar{display:none}
-  .reports{
-  display:flex;
-  gap:11px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  padding-bottom:5px;
-  scrollbar-width:none;
+
+h1{
+  margin:0 0 6px;
+  font-size:22px;
+  letter-spacing:-.3px;
 }
 
-.reports::-webkit-scrollbar{
-  display:none;
+.sub{
+  color:var(--muted);
+  font-size:12px;
 }
 
-.report-card{
-  min-width:82%;
-  height:215px;
-  border:1px solid var(--line);
-  border-radius:18px;
-  overflow:hidden;
-  position:relative;
-  background:#0b0b0b;
-  scroll-snap-align:start;
-}
-
-.report-gallery{
-  width:100%;
-  height:100%;
-  display:flex;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  scrollbar-width:none;
-}
-
-.report-gallery::-webkit-scrollbar{
-  display:none;
-}
-
-.report-gallery img{
-  min-width:100%;
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
-  object-position:center;
-  scroll-snap-align:start;
-}
-
-.report-info{
-  position:absolute;
-  inset:auto 0 0;
-  padding:42px 15px 14px;
-  background:linear-gradient(transparent,#050505);
-  pointer-events:none;
-}
-
-.report-info b{
-  display:block;
-  font-size:14px;
-  margin-bottom:5px;
-}
-
-.report-info small{
-  color:#bbb;
-  font-size:11px;
-}
-.report{min-width:82%;height:215px;border:1px solid var(--line);border-radius:18px;overflow:hidden;position:relative;background:linear-gradient(145deg,#191919,#090909);scroll-snap-align:start}
-.report .photo{width:100%;height:100%;display:block;object-fit:cover;object-position:center;background:#0b0b0b}
-.report .overlay{position:absolute;inset:auto 0 0;padding:42px 15px 14px;background:linear-gradient(transparent,#050505)}
-.report b{display:block;font-size:14px;margin-bottom:5px}.report small{color:#bbb;font-size:11px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.social{display:flex;align-items:center;gap:11px;padding:13px;border:1px solid var(--line);border-radius:15px;background:#0e0e0e;transition:.2s}
-.social:active,.action:active{transform:scale(.98)}
-.icon{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#181818;font-size:17px}
-.social span{font-size:12px}.social small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
-.card{border:1px solid var(--line);background:#0e0e0e;border-radius:17px;padding:15px}
-.phone{display:flex;justify-content:space-between;align-items:center}
-.phone .number{font-size:18px;direction:ltr}
-.action{display:block;text-align:center;border:1px solid #421313;background:#210909;padding:11px;border-radius:12px;font-size:12px;margin-top:12px}
-.address{line-height:2;font-size:13px;color:#ddd}
-.map-buttons{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}
-.map-buttons a{padding:12px;text-align:center;border-radius:12px;background:#171717;border:1px solid var(--line);font-size:11px}
-footer{text-align:center;color:#666;font-size:10px;padding-top:28px}
-@media(max-width:380px){.grid{grid-template-columns:1fr}.report{min-width:88%}}
 /* =========================
-   گزارش تصویری جدید
+   SECTION TITLE
 ========================= */
+
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin:20px 2px 11px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+.section-title:before{
+  content:"";
+  width:3px;
+  height:17px;
+  flex:none;
+  background:var(--red2);
+  border-radius:5px;
+  box-shadow:0 0 8px rgba(213,43,43,.22);
+}
+
+/* ==================================================
+   CINEMATIC REPORT GALLERY
+================================================== */
 
 .reports{
   width:100%;
@@ -118,82 +124,182 @@ footer{text-align:center;color:#666;font-size:10px;padding-top:28px}
 
 .report-card{
   width:100%;
-  border:1px solid var(--line);
-  border-radius:18px;
   overflow:hidden;
-  position:relative;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:19px;
   background:#090909;
+  box-shadow:
+    0 18px 50px rgba(0,0,0,.42),
+    0 0 0 1px rgba(0,0,0,.25);
 }
 
-/* قاب اسلایدر */
+/* قاب اصلی */
+
 .report-gallery{
   position:relative;
   width:100%;
   overflow:hidden;
+  background:#050505;
   touch-action:pan-y;
-  background:#080808;
+  user-select:none;
+  cursor:grab;
+  isolation:isolate;
 }
 
-/* ریل عکس‌ها */
+.report-gallery.dragging{
+  cursor:grabbing;
+}
+
+/* نور خیلی ظریف اطراف گالری */
+
+.report-gallery:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:20;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.05),
+    inset 0 -1px 0 rgba(0,0,0,.55);
+}
+
+/* ریل */
+
 .report-track{
   display:flex;
   width:100%;
-  will-change:transform;
   transform:translate3d(0,0,0);
+  will-change:transform;
 }
 
-/* هر عکس */
+/* اسلاید */
+
 .report-slide{
+  position:relative;
   flex:0 0 100%;
   width:100%;
-  position:relative;
   overflow:hidden;
+  background:#080808;
 }
+
+/* عکس */
 
 .report-slide img{
   display:block;
   width:100%;
-  height:auto;
   aspect-ratio:16 / 10;
   object-fit:cover;
+  object-position:center;
   user-select:none;
   -webkit-user-drag:none;
   pointer-events:none;
 
-  transform:scale(1);
-  transition:transform .6s cubic-bezier(.22,.61,.36,1);
+  transform:
+    scale(1.035)
+    translate3d(0,0,0);
+
+  filter:
+    brightness(.94)
+    saturate(.96);
+
+  transition:
+    transform .75s cubic-bezier(.16,1,.3,1),
+    filter .75s ease;
 }
+
+/* عکس فعال */
 
 .report-slide.active img{
-  transform:scale(1.025);
+  transform:
+    scale(1.015)
+    translate3d(0,0,0);
+
+  filter:
+    brightness(1)
+    saturate(1);
 }
 
-/* نوار شیشه‌ای پایین عکس */
+/* هنگام درگ */
+
+.report-gallery.dragging .report-slide img{
+  transition:none;
+}
+
+/* =========================
+   گرادیان سینمایی روی عکس
+========================= */
+
+.report-slide:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.04) 0%,
+      transparent 42%,
+      rgba(0,0,0,.18) 72%,
+      rgba(0,0,0,.72) 100%
+    );
+}
+
+/* =========================
+   کنترل‌ها
+========================= */
+
 .report-controls{
   position:absolute;
   left:0;
   right:0;
   bottom:0;
-
-  height:43px;
+  height:50px;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  background:linear-gradient(
-    to top,
-    rgba(5,5,5,.94),
-    rgba(5,5,5,.48)
-  );
+  z-index:8;
 
-  backdrop-filter:blur(9px);
-  -webkit-backdrop-filter:blur(9px);
+  background:
+    linear-gradient(
+      to top,
+      rgba(3,3,3,.94),
+      rgba(3,3,3,.68) 55%,
+      rgba(3,3,3,0)
+    );
 
-  z-index:5;
+  pointer-events:auto;
 }
 
-/* نقطه‌ها */
+/* شیشه بسیار ظریف */
+
+.report-control-glass{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  min-width:92px;
+  height:25px;
+  padding:0 13px;
+
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+
+  background:rgba(10,10,10,.34);
+
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+
+  box-shadow:
+    0 5px 20px rgba(0,0,0,.18),
+    inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+/* نقاط */
+
 .report-dots{
   display:flex;
   align-items:center;
@@ -202,101 +308,316 @@ footer{text-align:center;color:#666;font-size:10px;padding-top:28px}
   direction:ltr;
 }
 
-/* نقطه معمولی */
+/* نقطه */
+
 .report-dot{
   width:5px;
   height:5px;
   padding:0;
   border:0;
-  border-radius:50%;
-  background:rgba(255,255,255,.38);
-  transition:
-    width .35s cubic-bezier(.22,.61,.36,1),
-    background .35s ease,
-    opacity .35s ease;
-}
-
-/* کپسول فعال */
-.report-dot.active{
-  width:21px;
-  height:5px;
   border-radius:20px;
-  background:#d12a2a;
-  opacity:1;
-  box-shadow:0 0 10px rgba(209,42,42,.3);
+
+  background:rgba(255,255,255,.32);
+
+  opacity:.8;
+
+  transition:
+    width .32s cubic-bezier(.16,1,.3,1),
+    background .32s ease,
+    opacity .32s ease,
+    box-shadow .32s ease;
+
+  cursor:pointer;
 }
 
-/* افکت نور هنگام تعویض */
+/* فعال */
+
+.report-dot.active{
+  width:22px;
+  background:var(--red2);
+  opacity:1;
+
+  box-shadow:
+    0 0 9px rgba(213,43,43,.28);
+}
+
+/* =========================
+   نوار پیشرفت
+========================= */
+
+.report-progress{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:1.5px;
+  z-index:15;
+  background:rgba(255,255,255,.07);
+  overflow:hidden;
+}
+
+.report-progress-bar{
+  height:100%;
+  width:0;
+  background:linear-gradient(
+    90deg,
+    #751010,
+    #d52b2b
+  );
+
+  box-shadow:
+    0 0 8px rgba(213,43,43,.35);
+
+  transition:width .08s linear;
+}
+
+/* =========================
+   افکت نور
+========================= */
+
 .report-flash{
   position:absolute;
   inset:0;
+  z-index:30;
 
-  background:linear-gradient(
-    110deg,
-    transparent 20%,
-    rgba(255,255,255,.12) 50%,
-    transparent 80%
-  );
+  pointer-events:none;
 
   opacity:0;
-  transform:translateX(-100%);
-  pointer-events:none;
-  z-index:10;
+  transform:translateX(-110%);
+
+  background:
+    linear-gradient(
+      105deg,
+      transparent 18%,
+      rgba(255,255,255,.03) 40%,
+      rgba(255,255,255,.15) 50%,
+      rgba(255,255,255,.03) 60%,
+      transparent 82%
+    );
 }
 
 .report-flash.play{
-  animation:reportFlash .42s ease;
+  animation:
+    reportFlash .48s cubic-bezier(.22,.61,.36,1);
 }
 
 @keyframes reportFlash{
+
   0%{
     opacity:0;
-    transform:translateX(-100%);
+    transform:translateX(-110%);
   }
 
   35%{
-    opacity:.65;
+    opacity:.7;
   }
 
   100%{
     opacity:0;
-    transform:translateX(100%);
+    transform:translateX(110%);
   }
+
 }
 
-/* اطلاعات گزارش؛ کاملاً جدا از عکس */
+/* =========================
+   اطلاعات گزارش
+========================= */
+
 .report-info{
-  position:static;
-  padding:18px 10px 5px;
+  position:relative;
+  padding:17px 12px 16px;
   text-align:center;
-  background:none;
+  background:
+    linear-gradient(
+      180deg,
+      #0a0a0a,
+      #080808
+    );
+}
+
+.report-info:before{
+  content:"";
+  display:block;
+  width:28px;
+  height:1px;
+  margin:0 auto 12px;
+
+  background:var(--red2);
+  opacity:.7;
+  box-shadow:0 0 8px rgba(213,43,43,.2);
 }
 
 .report-info b{
   display:block;
-  font-size:14px;
   margin-bottom:6px;
-  color:#f1f1f1;
+  color:#f2f2f2;
+  font-size:14px;
+  font-weight:bold;
 }
 
 .report-info small{
-  color:#999;
+  color:#8f8f8f;
   font-size:11px;
 }
 
-/* موبایل */
+/* ==================================================
+   سایر بخش‌ها
+================================================== */
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.social{
+  display:flex;
+  align-items:center;
+  gap:11px;
+
+  padding:13px;
+
+  border:1px solid var(--line);
+  border-radius:15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #111,
+      #0c0c0c
+    );
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.social:active,
+.action:active{
+  transform:scale(.98);
+}
+
+.social:hover{
+  border-color:#3a2020;
+}
+
+.icon{
+  width:38px;
+  height:38px;
+  flex:none;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:11px;
+
+  background:#181818;
+
+  font-size:17px;
+}
+
+.social span{
+  font-size:12px;
+}
+
+.social small{
+  display:block;
+  margin-top:3px;
+  color:var(--muted);
+  font-size:10px;
+}
+
+.card{
+  padding:15px;
+
+  border:1px solid var(--line);
+  border-radius:17px;
+
+  background:#0e0e0e;
+}
+
+.phone{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.phone .number{
+  direction:ltr;
+  font-size:18px;
+}
+
+.action{
+  display:block;
+
+  margin-top:12px;
+  padding:11px;
+
+  text-align:center;
+
+  border:1px solid #421313;
+  border-radius:12px;
+
+  background:#210909;
+
+  font-size:12px;
+}
+
+.address{
+  color:#ddd;
+  font-size:13px;
+  line-height:2;
+}
+
+.map-buttons{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+
+  margin-top:12px;
+}
+
+.map-buttons a{
+  padding:12px;
+
+  text-align:center;
+
+  border:1px solid var(--line);
+  border-radius:12px;
+
+  background:#171717;
+
+  font-size:11px;
+}
+
+footer{
+  padding-top:28px;
+
+  color:#666;
+
+  text-align:center;
+
+  font-size:10px;
+}
+
+/* =========================
+   موبایل
+========================= */
+
 @media(max-width:600px){
 
-  .report-card{
-    border-radius:15px;
+  .page{
+    padding-left:14px;
+    padding-right:14px;
   }
 
-  .report-controls{
-    height:40px;
+  .report-card{
+    border-radius:16px;
   }
 
   .report-info{
-    padding-top:17px;
+    padding-top:15px;
   }
 
   .report-info b{
@@ -306,150 +627,586 @@ footer{text-align:center;color:#666;font-size:10px;padding-top:28px}
   .report-info small{
     font-size:10px;
   }
+
+  .report-control-glass{
+    min-width:86px;
+    height:24px;
+  }
+
+}
+
+/* گوشی‌های خیلی کوچک */
+
+@media(max-width:380px){
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    font-size:20px;
+  }
+
 }
 </style>
 </head>
+
+
 <body>
+
 <main class="page">
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
+
   <div class="logo">
-  <img src="IMG_20251102_193153_076.webp" alt="لوگوی هیئت معظم حسینیون">
+
+    <img
+      src="IMG_20251102_193153_076.webp"
+      alt="لوگوی هیئت معظم حسینیون"
+    >
+
   </div>
-  <h1>هیئت معظم حسینیون</h1>
-  <div class="sub">رسانه و راه‌های ارتباطی هیئت</div>
+
+  <h1>
+    هیئت معظم حسینیون
+  </h1>
+
+  <div class="sub">
+    رسانه و راه‌های ارتباطی هیئت
+  </div>
+
 </header>
 
+
+<!-- ==================================================
+     گزارش تصویری
+================================================== -->
+
 <section>
-  <div class="report-dots">
-  <button class="report-dot active" type="button"></button>
-  <button class="report-dot" type="button"></button>
-  <button class="report-dot" type="button"></button>
+
+  <div class="section-title">
+    گزارش‌های تصویری
   </div>
-<div class="reports">
 
-  <!-- گزارش ۱: ۱۷ شهریور -->
-  <article class="report-card">
 
-    <div class="report-gallery">
+  <div class="reports">
 
-      <div class="report-track">
+    <article class="report-card">
 
-        <div class="report-slide active">
-          <img src="file_00000000142081f4a98e6146d9a0e812.png"
-               alt="۱۷ شهریورماه - عکس ۱">
+      <div class="report-gallery">
+
+        <div class="report-track">
+
+
+          <!-- =========================
+               عکس ۱
+          ========================= -->
+
+          <div class="report-slide active">
+
+            <img
+              src="file_00000000142081f4a98e6146d9a0e812.png"
+              alt="۱۷ شهریورماه - عکس اول"
+            >
+
+
+            <div class="report-controls">
+
+              <div class="report-control-glass">
+
+                <div class="report-dots">
+
+                  <button
+                    class="report-dot active"
+                    type="button"
+                    aria-label="عکس اول"
+                  ></button>
+
+                  <button
+                    class="report-dot"
+                    type="button"
+                    aria-label="عکس دوم"
+                  ></button>
+
+                  <button
+                    class="report-dot"
+                    type="button"
+                    aria-label="عکس سوم"
+                  ></button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- =========================
+               عکس ۲
+          ========================= -->
+
+          <div class="report-slide">
+
+            <img
+              src="file_00000000d17482109c9a88afbf751dd6.png"
+              alt="۱۷ شهریورماه - عکس دوم"
+            >
+
+
+            <div class="report-controls">
+
+              <div class="report-control-glass">
+
+                <div class="report-dots">
+
+                  <button
+                    class="report-dot active"
+                    type="button"
+                    aria-label="عکس اول"
+                  ></button>
+
+                  <button
+                    class="report-dot"
+                    type="button"
+                    aria-label="عکس دوم"
+                  ></button>
+
+                  <button
+                    class="report-dot"
+                    type="button"
+                    aria-label="عکس سوم"
+                  ></button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- =========================
+               عکس ۳
+          ========================= -->
+
+          <div class="report-slide">
+
+            <img
+              src="file_00000000fbc881f4a146cba041142c84.png"
+              alt="۱۷ شهریورماه - عکس سوم"
+            >
+
+
+            <div class="report-controls">
+
+              <div class="report-control-glass">
+
+                <div class="report-dots">
+
+                  <button
+                    class="report-dot active"
+                    type="button"
+                    aria-label="عکس اول"
+                  ></button>
+
+                  <button
+                    class="report-dot"
+                    type="button"
+                    aria-label="عکس دوم"
+                  ></button>
+
+                  <button
+                    class="report-dot"
+                    type="button"
+                    aria-label="عکس سوم"
+                  ></button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
         </div>
 
-        <div class="report-slide">
-          <img src="file_00000000d17482109c9a88afbf751dd6.png"
-               alt="۱۷ شهریورماه - عکس ۲">
-        </div>
 
-        <div class="report-slide">
-          <img src="file_00000000fbc881f4a146cba041142c84.png"
-               alt="۱۷ شهریورماه - عکس ۳">
+        <!-- افکت نور -->
+
+        <div class="report-flash"></div>
+
+
+        <!-- نوار پیشرفت -->
+
+        <div class="report-progress">
+
+          <div class="report-progress-bar"></div>
+
         </div>
 
       </div>
 
-      <!-- نوار نقطه‌ها -->
-      <div class="report-controls">
-        <div class="report-dots">
 
-          <button class="report-dot active"
-                  type="button"
-                  aria-label="عکس ۱"></button>
+      <!-- =========================
+           اطلاعات گزارش
+      ========================= -->
 
-          <button class="report-dot"
-                  type="button"
-                  aria-label="عکس ۲"></button>
+      <div class="report-info">
 
-          <button class="report-dot"
-                  type="button"
-                  aria-label="عکس ۳"></button>
+        <b>
+          ۱۷ شهریورماه
+        </b>
 
-        </div>
+        <small>
+          روضه هفتگی به نیت فرج امام زمان (عج)
+        </small>
+
       </div>
 
-      <!-- افکت تغییر عکس -->
-      <div class="report-flash"></div>
+    </article>
 
-    </div>
-
-    <!-- اطلاعات جدا از عکس -->
-    <div class="report-info">
-      <b>۱۷ شهریورماه</b>
-      <small>روضه هفتگی به نیت فرج امام زمان (عج)</small>
-    </div>
-
-  </article>
-
-</div>
-</section>
-
-<section>
-<div class="section-title">شبکه‌های اجتماعی</div>
-<div class="grid">
-  <a class="social" href="https://www.instagram.com/husseiniyun.bnd?stkn=MXhqN2xuMzY4ZnR0NA==" target="_blank"><div class="icon">◎</div><div><span>اینستاگرام هیئت</span><small>@husseiniyun.bnd</small></div></a>
-  <a class="social" href="https://t.me/husseniyun_bnd" target="_blank"><div class="icon">➤</div><div><span>تلگرام</span><small>@husseniyun_bnd</small></div></a>
-  <a class="social" href="https://rubika.ir/husseniyun_bnd" target="_blank"><div class="icon">R</div><div><span>روبیکا</span><small>husseniyun_bnd</small></div></a>
-  <a class="social" href="https://eitaa.com/husseniyun_bnd" target="_blank"><div class="icon">E</div><div><span>ایتا</span><small>husseniyun_bnd</small></div></a>
-</div>
-<div class="section-title">رسانه شُبَیر مدیا</div>
-<a class="social" href="https://www.instagram.com/shubayer_media?stkn=MWI5Z3J0dGs0cDA5cg==" target="_blank"><div class="icon">ش</div><div><span>شُبَیر مدیا</span><small>رسانه هیئت</small></div></a>
-</section>
-
-<section>
-<div class="section-title">زمان برگزاری هیئت</div>
-<div class="card" style="text-align:center">
-  <div style="font-size:16px;font-weight:bold">سه‌شنبه‌ها</div>
-  <div style="color:#aaa;font-size:12px;margin-top:7px">ساعت ۲۰:۳۰</div>
-</div>
-</section>
-
-<section>
-<div class="section-title">ارتباط با هیئت</div>
-<div class="card phone">
-  <div><div class="sub">شماره تماس</div><div class="number">09376067183</div></div>
-  <div class="icon">☎</div>
-</div>
-<a class="action" href="tel:09376067183">تماس با هیئت</a>
-</section>
-
-<section>
-<div class="section-title">آدرس هیئت</div>
-<div class="card">
-  <div class="address">بندرعباس، بلوار امام حسین، شهرک طلائیه فاز اول، مسجد حضرت فاطمه معصومه (ص)</div>
-  <div class="map-buttons">
-    <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%D8%A8%D9%86%D8%AF%D8%B1%D8%B9%D8%A8%D8%A7%D8%B3%20%D8%A8%D9%84%D9%88%D8%A7%D8%B1%20%D8%A7%D9%85%D8%A7%D9%85%20%D8%AD%D8%B3%DB%8C%D9%86%20%D8%B4%D9%87%D8%B1%DA%A9%20%D8%B7%D9%84%D8%A7%D8%A6%DB%8C%D9%87%20%D9%81%D8%A7%D8%B2%20%D8%A7%D9%88%D9%84%20%D9%85%D8%B3%D8%AC%D8%AF%20%D8%AD%D8%B6%D8%B1%D8%AA%20%D9%81%D8%A7%D8%B7%D9%85%D9%87%20%D9%85%D8%B9%D8%B5%D9%88%D9%85%D9%87">🗺️ Google Maps</a>
-    <a target="_blank" href="https://nshn.ir/?lat=27.183221&lng=56.266645&z=17">📍 نشان</a>
   </div>
-</div>
+
 </section>
 
-<footer>هیئت معظم حسینیون • بندرعباس</footer>
+
+<!-- ==================================================
+     شبکه‌های اجتماعی
+================================================== -->
+
+<section>
+
+  <div class="section-title">
+    شبکه‌های اجتماعی
+  </div>
+
+
+  <div class="grid">
+
+
+    <a
+      class="social"
+      href="https://www.instagram.com/husseiniyun.bnd?stkn=MXhqN2xuMzY4ZnR0NA=="
+      target="_blank"
+      rel="noopener"
+    >
+
+      <div class="icon">
+        ◎
+      </div>
+
+      <div>
+
+        <span>
+          اینستاگرام هیئت
+        </span>
+
+        <small>
+          @husseiniyun.bnd
+        </small>
+
+      </div>
+
+    </a>
+
+
+    <a
+      class="social"
+      href="https://t.me/husseniyun_bnd"
+      target="_blank"
+      rel="noopener"
+    >
+
+      <div class="icon">
+        ➤
+      </div>
+
+      <div>
+
+        <span>
+          تلگرام
+        </span>
+
+        <small>
+          @husseniyun_bnd
+        </small>
+
+      </div>
+
+    </a>
+
+
+    <a
+      class="social"
+      href="https://rubika.ir/husseniyun_bnd"
+      target="_blank"
+      rel="noopener"
+    >
+
+      <div class="icon">
+        R
+      </div>
+
+      <div>
+
+        <span>
+          روبیکا
+        </span>
+
+        <small>
+          husseniyun_bnd
+        </small>
+
+      </div>
+
+    </a>
+
+
+    <a
+      class="social"
+      href="https://eitaa.com/husseniyun_bnd"
+      target="_blank"
+      rel="noopener"
+    >
+
+      <div class="icon">
+        E
+      </div>
+
+      <div>
+
+        <span>
+          ایتا
+        </span>
+
+        <small>
+          husseniyun_bnd
+        </small>
+
+      </div>
+
+    </a>
+
+
+  </div>
+
+
+  <div class="section-title">
+    رسانه شُبَیر مدیا
+  </div>
+
+
+  <a
+    class="social"
+    href="https://www.instagram.com/shubayer_media?stkn=MWI5Z3J0dGs0cDA5cg=="
+    target="_blank"
+    rel="noopener"
+  >
+
+    <div class="icon">
+      ش
+    </div>
+
+    <div>
+
+      <span>
+        شُبَیر مدیا
+      </span>
+
+      <small>
+        رسانه هیئت
+      </small>
+
+    </div>
+
+  </a>
+
+</section>
+
+
+<!-- ==================================================
+     زمان برگزاری
+================================================== -->
+
+<section>
+
+  <div class="section-title">
+    زمان برگزاری هیئت
+  </div>
+
+
+  <div
+    class="card"
+    style="text-align:center"
+  >
+
+    <div
+      style="font-size:16px;font-weight:bold"
+    >
+      سه‌شنبه‌ها
+    </div>
+
+    <div
+      style="color:#aaa;font-size:12px;margin-top:7px"
+    >
+      ساعت ۲۰:۳۰
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==================================================
+     ارتباط
+================================================== -->
+
+<section>
+
+  <div class="section-title">
+    ارتباط با هیئت
+  </div>
+
+
+  <div class="card phone">
+
+    <div>
+
+      <div class="sub">
+        شماره تماس
+      </div>
+
+      <div class="number">
+        09376067183
+      </div>
+
+    </div>
+
+
+    <div class="icon">
+      ☎
+    </div>
+
+  </div>
+
+
+  <a
+    class="action"
+    href="tel:09376067183"
+  >
+    تماس با هیئت
+  </a>
+
+</section>
+
+
+<!-- ==================================================
+     آدرس
+================================================== -->
+
+<section>
+
+  <div class="section-title">
+    آدرس هیئت
+  </div>
+
+
+  <div class="card">
+
+    <div class="address">
+      بندرعباس، بلوار امام حسین، شهرک طلائیه فاز اول، مسجد حضرت فاطمه معصومه (ص)
+    </div>
+
+
+    <div class="map-buttons">
+
+
+      <a
+        target="_blank"
+        rel="noopener"
+        href="https://www.google.com/maps/search/?api=1&query=%D8%A8%D9%86%D8%AF%D8%B1%D8%B9%D8%A8%D8%A7%D8%B3%20%D8%A8%D9%84%D9%88%D8%A7%D8%B1%20%D8%A7%D9%85%D8%A7%D9%85%20%D8%AD%D8%B3%DB%8C%D9%86%20%D8%B4%D9%87%D8%B1%DA%A9%20%D8%B7%D9%84%D8%A7%D8%A6%DB%8C%D9%87%20%D9%81%D8%A7%D8%B2%20%D8%A7%D9%88%D9%84%20%D9%85%D8%B3%D8%AC%D8%AF%20%D8%AD%D8%B6%D8%B1%D8%AA%20%D9%81%D8%A7%D8%B7%D9%85%D9%87%20%D9%85%D8%B9%D8%B5%D9%88%D9%85%D9%87"
+      >
+        🗺️ Google Maps
+      </a>
+
+
+      <a
+        target="_blank"
+        rel="noopener"
+        href="https://nshn.ir/?lat=27.183221&lng=56.266645&z=17"
+      >
+        📍 نشان
+      </a>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+  هیئت معظم حسینیون • بندرعباس
+</footer>
+
 </main>
+
+
 <script>
 document.querySelectorAll('.report-card').forEach(card => {
 
-  const gallery = card.querySelector('.report-gallery');
-  const track = card.querySelector('.report-track');
-  const slides = [...card.querySelectorAll('.report-slide')];
-  const dots = [...card.querySelectorAll('.report-dot')];
-  const flash = card.querySelector('.report-flash');
+  const gallery =
+    card.querySelector('.report-gallery');
+
+  const track =
+    card.querySelector('.report-track');
+
+  const slides =
+    [...card.querySelectorAll('.report-slide')];
+
+  const dots =
+    [...card.querySelectorAll('.report-dot')];
+
+  const flash =
+    card.querySelector('.report-flash');
+
+  const progressBar =
+    card.querySelector('.report-progress-bar');
+
 
   let current = 0;
 
   let startX = 0;
   let currentX = 0;
+
   let dragging = false;
+
   let startTime = 0;
 
+  let autoplayTimer = null;
 
-  /* =========================
-     رفتن به اسلاید
-  ========================= */
+  let progressTimer = null;
 
-  function goTo(index, animate = true){
+
+  /* ==========================================
+     برو به اسلاید
+  ========================================== */
+
+  function goTo(
+    index,
+    animate = true,
+    effect = true
+  ){
 
     if(index < 0){
       index = slides.length - 1;
@@ -461,37 +1218,47 @@ document.querySelectorAll('.report-card').forEach(card => {
 
     current = index;
 
-    track.style.transition = animate
-      ? 'transform .55s cubic-bezier(.22,.61,.36,1)'
-      : 'none';
+
+    track.style.transition =
+      animate
+        ? 'transform .65s cubic-bezier(.16,1,.3,1)'
+        : 'none';
+
 
     track.style.transform =
       `translate3d(-${current * 100}%,0,0)`;
 
 
-    /* نقطه فعال */
+    /* نقاط */
 
-    dots.forEach((dot, i) => {
+    dots.forEach((dot,i)=>{
+
       dot.classList.toggle(
         'active',
         i === current
       );
+
     });
 
 
     /* عکس فعال */
 
-    slides.forEach((slide, i) => {
+    slides.forEach((slide,i)=>{
+
       slide.classList.toggle(
         'active',
         i === current
       );
+
     });
 
 
-    /* افکت */
+    /* افکت نور */
 
-    if(animate){
+    if(
+      animate &&
+      effect
+    ){
 
       flash.classList.remove('play');
 
@@ -501,154 +1268,327 @@ document.querySelectorAll('.report-card').forEach(card => {
 
     }
 
+
+    resetProgress();
+
   }
 
 
-  /* =========================
-     کلیک روی نقطه
-  ========================= */
+  /* ==========================================
+     برو به عکس بعدی
+  ========================================== */
 
-  dots.forEach((dot, index) => {
+  function next(){
 
-    dot.addEventListener('click', () => {
+    goTo(
+      current + 1,
+      true,
+      true
+    );
 
-      goTo(index);
+  }
+
+
+  /* ==========================================
+     برو به عکس قبلی
+  ========================================== */
+
+  function previous(){
+
+    goTo(
+      current - 1,
+      true,
+      true
+    );
+
+  }
+
+
+  /* ==========================================
+     نقاط هنگام کشیدن
+  ========================================== */
+
+  function updateDotsWhileDragging(){
+
+    const delta =
+      currentX - startX;
+
+    const width =
+      gallery.clientWidth;
+
+    if(!width) return;
+
+
+    const progress =
+      Math.abs(delta) / width;
+
+
+    if(progress < .2){
+
+      dots.forEach((dot,i)=>{
+
+        dot.classList.toggle(
+          'active',
+          i === current
+        );
+
+      });
+
+      return;
+
+    }
+
+
+    let preview = current;
+
+
+    if(delta < 0){
+
+      preview =
+        current + 1;
+
+    }else{
+
+      preview =
+        current - 1;
+
+    }
+
+
+    if(preview < 0){
+
+      preview =
+        slides.length - 1;
+
+    }
+
+
+    if(preview >= slides.length){
+
+      preview = 0;
+
+    }
+
+
+    dots.forEach((dot,i)=>{
+
+      dot.classList.toggle(
+        'active',
+        i === preview
+      );
 
     });
+
+  }
+
+
+  /* ==========================================
+     کلیک روی نقطه
+  ========================================== */
+
+  dots.forEach((dot,index)=>{
+
+    dot.addEventListener(
+      'click',
+      e=>{
+
+        e.stopPropagation();
+
+        stopAutoplay();
+
+        goTo(
+          index,
+          true,
+          true
+        );
+
+        startAutoplay();
+
+      }
+    );
 
   });
 
 
-  /* =========================
-     شروع لمس
-  ========================= */
+  /* ==========================================
+     لمس
+  ========================================== */
 
   gallery.addEventListener(
     'touchstart',
-    e => {
+    e=>{
 
-      startX = e.touches[0].clientX;
-      currentX = startX;
+      if(e.touches.length !== 1){
+        return;
+      }
 
-      startTime = Date.now();
+      stopAutoplay();
+
+      startX =
+        e.touches[0].clientX;
+
+      currentX =
+        startX;
+
+      startTime =
+        Date.now();
 
       dragging = true;
 
-      track.style.transition = 'none';
+      gallery.classList.add('dragging');
+
+      track.style.transition =
+        'none';
 
     },
     {passive:true}
   );
 
 
-  /* =========================
+  /* ==========================================
      حرکت لمس
-  ========================= */
+  ========================================== */
 
   gallery.addEventListener(
     'touchmove',
-    e => {
+    e=>{
 
-      if(!dragging) return;
+      if(!dragging){
+        return;
+      }
 
-      currentX = e.touches[0].clientX;
+      currentX =
+        e.touches[0].clientX;
+
 
       const delta =
         currentX - startX;
+
 
       const percent =
         (delta / gallery.clientWidth) * 100;
 
+
       const base =
         -(current * 100);
 
+
       track.style.transform =
         `translate3d(${base + percent}%,0,0)`;
+
+
+      updateDotsWhileDragging();
 
     },
     {passive:true}
   );
 
 
-  /* =========================
+  /* ==========================================
      پایان لمس
-  ========================= */
+  ========================================== */
 
   gallery.addEventListener(
     'touchend',
-    () => {
+    ()=>{
 
-      if(!dragging) return;
+      if(!dragging){
+        return;
+      }
 
       dragging = false;
+
+      gallery.classList.remove('dragging');
+
 
       const delta =
         currentX - startX;
 
+
       const elapsed =
         Date.now() - startTime;
+
 
       const velocity =
         Math.abs(delta) /
         Math.max(elapsed,1);
 
+
       const threshold =
         Math.min(
-          gallery.clientWidth * .18,
+          gallery.clientWidth * .16,
           100
         );
 
 
-      /* عکس قبلی */
-
       if(
         delta > threshold ||
-        (delta > 40 && velocity > .5)
+        (
+          delta > 40 &&
+          velocity > .5
+        )
       ){
 
-        goTo(current - 1);
+        previous();
 
       }
-
-      /* عکس بعدی */
 
       else if(
         delta < -threshold ||
-        (delta < -40 && velocity > .5)
+        (
+          delta < -40 &&
+          velocity > .5
+        )
       ){
 
-        goTo(current + 1);
+        next();
 
       }
-
-      /* برگشت */
 
       else{
 
-        goTo(current);
+        goTo(
+          current,
+          true,
+          false
+        );
 
       }
+
+
+      startAutoplay();
 
     }
   );
 
 
-  /* =========================
-     موس برای کامپیوتر
-  ========================= */
+  /* ==========================================
+     موس
+  ========================================== */
 
   gallery.addEventListener(
     'mousedown',
-    e => {
+    e=>{
 
-      startX = e.clientX;
-      currentX = startX;
+      e.preventDefault();
 
-      startTime = Date.now();
+      stopAutoplay();
+
+      startX =
+        e.clientX;
+
+      currentX =
+        startX;
+
+      startTime =
+        Date.now();
 
       dragging = true;
 
-      track.style.transition = 'none';
+      gallery.classList.add('dragging');
+
+      track.style.transition =
+        'none';
 
     }
   );
@@ -656,23 +1596,33 @@ document.querySelectorAll('.report-card').forEach(card => {
 
   window.addEventListener(
     'mousemove',
-    e => {
+    e=>{
 
-      if(!dragging) return;
+      if(!dragging){
+        return;
+      }
 
-      currentX = e.clientX;
+      currentX =
+        e.clientX;
+
 
       const delta =
         currentX - startX;
 
+
       const percent =
         (delta / gallery.clientWidth) * 100;
+
 
       const base =
         -(current * 100);
 
+
       track.style.transform =
         `translate3d(${base + percent}%,0,0)`;
+
+
+      updateDotsWhileDragging();
 
     }
   );
@@ -680,37 +1630,162 @@ document.querySelectorAll('.report-card').forEach(card => {
 
   window.addEventListener(
     'mouseup',
-    () => {
+    ()=>{
 
-      if(!dragging) return;
+      if(!dragging){
+        return;
+      }
 
       dragging = false;
+
+      gallery.classList.remove('dragging');
+
 
       const delta =
         currentX - startX;
 
+
       const threshold =
         Math.min(
-          gallery.clientWidth * .18,
+          gallery.clientWidth * .16,
           100
         );
 
 
       if(delta > threshold){
 
-        goTo(current - 1);
+        previous();
 
       }
 
       else if(delta < -threshold){
 
-        goTo(current + 1);
+        next();
 
       }
 
       else{
 
-        goTo(current);
+        goTo(
+          current,
+          true,
+          false
+        );
+
+      }
+
+
+      startAutoplay();
+
+    }
+  );
+
+
+  /* ==========================================
+     Auto Play
+  ========================================== */
+
+  function startAutoplay(){
+
+    stopAutoplay();
+
+    autoplayTimer =
+      setInterval(
+        ()=>{
+
+          next();
+
+        },
+        5000
+      );
+
+  }
+
+
+  function stopAutoplay(){
+
+    clearInterval(
+      autoplayTimer
+    );
+
+    autoplayTimer = null;
+
+    clearInterval(
+      progressTimer
+    );
+
+    progressTimer = null;
+
+  }
+
+
+  /* ==========================================
+     Progress Bar
+  ========================================== */
+
+  function resetProgress(){
+
+    clearInterval(
+      progressTimer
+    );
+
+    progressBar.style.width =
+      '0%';
+
+
+    const started =
+      Date.now();
+
+
+    progressTimer =
+      setInterval(
+        ()=>{
+
+          const elapsed =
+            Date.now() - started;
+
+
+          const percent =
+            Math.min(
+              (elapsed / 5000) * 100,
+              100
+            );
+
+
+          progressBar.style.width =
+            percent + '%';
+
+
+          if(percent >= 100){
+
+            clearInterval(
+              progressTimer
+            );
+
+          }
+
+        },
+        30
+      );
+
+  }
+
+
+  /* ==========================================
+     توقف Auto Play هنگام رفتن از صفحه
+  ========================================== */
+
+  document.addEventListener(
+    'visibilitychange',
+    ()=>{
+
+      if(document.hidden){
+
+        stopAutoplay();
+
+      }else{
+
+        startAutoplay();
 
       }
 
@@ -718,11 +1793,20 @@ document.querySelectorAll('.report-card').forEach(card => {
   );
 
 
-  /* شروع */
+  /* ==========================================
+     شروع
+  ========================================== */
 
-  goTo(0, false);
+  goTo(
+    0,
+    false,
+    false
+  );
+
+  startAutoplay();
 
 });
 </script>
+
 </body>
 </html>
