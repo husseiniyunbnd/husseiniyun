@@ -23,6 +23,10 @@
   --red2:#d12a2a;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   background:
@@ -34,6 +38,10 @@ body{
 a{
   text-decoration:none;
   color:inherit;
+}
+
+button{
+  font-family:inherit;
 }
 
 .page{
@@ -147,8 +155,6 @@ h1{
     filter .55s ease;
 }
 
-/* حرکت خیلی ظریف عکس هنگام فعال شدن */
-
 .report-slide.is-active img{
   transform:scale(1.015);
   filter:brightness(1);
@@ -167,7 +173,6 @@ h1{
   justify-content:center;
 
   gap:6px;
-
   padding:6px 9px;
 
   background:rgba(0,0,0,.52);
@@ -175,11 +180,9 @@ h1{
   -webkit-backdrop-filter:blur(9px);
 
   border:1px solid rgba(255,255,255,.08);
-
   border-radius:20px;
 
   direction:ltr;
-
   z-index:10;
 }
 
@@ -189,11 +192,9 @@ h1{
 
   padding:0;
   border:0;
-
   border-radius:50%;
 
   background:#aaa;
-
   opacity:.55;
 
   cursor:pointer;
@@ -212,7 +213,6 @@ h1{
   border-radius:20px;
 
   background:var(--red2);
-
   opacity:1;
 
   box-shadow:
@@ -227,10 +227,7 @@ h1{
   left:0;
   bottom:0;
 
-  padding:
-    55px
-    15px
-    14px;
+  padding:55px 15px 14px;
 
   background:
     linear-gradient(
@@ -239,7 +236,6 @@ h1{
     );
 
   pointer-events:none;
-
   z-index:5;
 }
 
@@ -317,38 +313,157 @@ h1{
   padding:15px;
 }
 
+/* ================= SHOBAYER MEDIA ================= */
+
+.media-card{
+  display:flex;
+  align-items:center;
+  gap:13px;
+}
+
+.media-logo{
+  width:48px;
+  height:48px;
+  flex-shrink:0;
+
+  border-radius:14px;
+
+  display:grid;
+  place-items:center;
+
+  background:#090909;
+  border:1px solid #351010;
+
+  font-weight:bold;
+  font-size:12px;
+
+  box-shadow:0 0 22px rgba(120,0,0,.18);
+}
+
+.media-text{
+  flex:1;
+}
+
+.media-text b{
+  display:block;
+  font-size:14px;
+  margin-bottom:5px;
+}
+
+.media-text small{
+  color:var(--muted);
+  font-size:10px;
+}
+
+.media-button{
+  display:inline-block;
+  padding:9px 12px;
+
+  border-radius:10px;
+
+  background:#210909;
+  border:1px solid #421313;
+
+  font-size:10px;
+}
+
+/* ================= SCHEDULE ================= */
+
+.schedule{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.schedule-main{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.schedule-icon{
+  width:42px;
+  height:42px;
+
+  border-radius:12px;
+
+  display:grid;
+  place-items:center;
+
+  background:#181818;
+  border:1px solid var(--line);
+
+  font-size:18px;
+}
+
+.schedule-text b{
+  display:block;
+  font-size:13px;
+  margin-bottom:4px;
+}
+
+.schedule-text small{
+  color:var(--muted);
+  font-size:10px;
+}
+
+.schedule-time{
+  direction:ltr;
+  font-size:18px;
+  font-weight:bold;
+}
+
 /* ================= PHONE ================= */
 
 .phone{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:10px;
 }
 
-.phone .number{
-  font-size:18px;
-  direction:ltr;
+.phone-info{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
-.action{
-  display:block;
-
-  text-align:center;
-
-  border:1px solid #421313;
-  background:#210909;
-
-  padding:11px;
+.phone-icon{
+  width:42px;
+  height:42px;
 
   border-radius:12px;
 
-  font-size:12px;
+  display:grid;
+  place-items:center;
 
-  margin-top:12px;
+  background:#181818;
+  border:1px solid var(--line);
+
+  font-size:17px;
 }
 
-.action:active{
-  transform:scale(.98);
+.phone-title{
+  font-size:12px;
+  color:var(--muted);
+  margin-bottom:4px;
+}
+
+.phone .number{
+  font-size:17px;
+  direction:ltr;
+}
+
+.call-button{
+  padding:10px 12px;
+
+  border-radius:11px;
+
+  background:#210909;
+  border:1px solid #421313;
+
+  font-size:10px;
 }
 
 /* ================= ADDRESS ================= */
@@ -357,6 +472,30 @@ h1{
   line-height:2;
   font-size:13px;
   color:#ddd;
+}
+
+.address-title{
+  display:flex;
+  align-items:center;
+  gap:9px;
+
+  font-size:13px;
+  font-weight:bold;
+
+  margin-bottom:8px;
+}
+
+.address-icon{
+  width:34px;
+  height:34px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:10px;
+
+  background:#181818;
+  border:1px solid var(--line);
 }
 
 .map-buttons{
@@ -373,10 +512,15 @@ h1{
   border-radius:12px;
 
   background:#171717;
-
   border:1px solid var(--line);
 
   font-size:11px;
+
+  transition:.2s;
+}
+
+.map-buttons a:active{
+  transform:scale(.98);
 }
 
 /* ================= FOOTER ================= */
@@ -386,6 +530,13 @@ footer{
   color:#666;
   font-size:10px;
   padding-top:28px;
+}
+
+.footer-line{
+  width:40px;
+  height:1px;
+  background:#351010;
+  margin:0 auto 10px;
 }
 
 /* ================= MOBILE ================= */
@@ -398,6 +549,14 @@ footer{
 
   .report-card{
     height:215px;
+  }
+
+  .phone .number{
+    font-size:15px;
+  }
+
+  .schedule-time{
+    font-size:16px;
   }
 
 }
@@ -416,9 +575,11 @@ footer{
 <header>
 
   <div class="logo">
+
     <img
       src="IMG_20251102_193153_076.webp"
       alt="لوگوی هیئت معظم حسینیون">
+
   </div>
 
   <h1>هیئت معظم حسینیون</h1>
@@ -440,7 +601,6 @@ footer{
 
 
   <div class="report-card">
-
 
     <div class="report-gallery">
 
@@ -547,8 +707,6 @@ footer{
     </div>
 
 
-    <!-- اطلاعات گزارش -->
-
     <div class="report-info">
 
       <b>۱۷ شهریورماه</b>
@@ -558,7 +716,6 @@ footer{
       </small>
 
     </div>
-
 
   </div>
 
@@ -580,7 +737,8 @@ footer{
     <a
       class="social"
       href="https://www.instagram.com/husseiniyun.bnd?stkn=MXhqN2xuMzY4ZnR0NA=="
-      target="_blank">
+      target="_blank"
+      rel="noopener">
 
       <div class="icon">◎</div>
 
@@ -595,7 +753,8 @@ footer{
     <a
       class="social"
       href="https://t.me/husseniyun_bnd"
-      target="_blank">
+      target="_blank"
+      rel="noopener">
 
       <div class="icon">➤</div>
 
@@ -610,7 +769,8 @@ footer{
     <a
       class="social"
       href="https://rubika.ir/husseniyun_bnd"
-      target="_blank">
+      target="_blank"
+      rel="noopener">
 
       <div class="icon">R</div>
 
@@ -625,7 +785,8 @@ footer{
     <a
       class="social"
       href="https://eitaa.com/husseniyun_bnd"
-      target="_blank">
+      target="_blank"
+      rel="noopener">
 
       <div class="icon">E</div>
 
@@ -639,8 +800,328 @@ footer{
 
   </div>
 
+</section>
 
-  <!-- شُبَیر مدیا -->
+
+<!-- ================= SHOBAYER MEDIA ================= -->
+
+<section>
 
   <div class="section-title">
-   
+    شُبَیر مدیا
+  </div>
+
+
+  <div class="card media-card">
+
+    <div class="media-logo">
+      شُبَیر
+    </div>
+
+    <div class="media-text">
+
+      <b>شُبَیر مدیا</b>
+
+      <small>
+        رسانه هیئت و پوشش تصویری مراسم
+      </small>
+
+    </div>
+
+    <a
+      class="media-button"
+      href="https://www.instagram.com/shubayer_media?stkn=MWI5Z3J0dGs0cDA5cg=="
+      target="_blank"
+      rel="noopener">
+
+      مشاهده
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SCHEDULE ================= -->
+
+<section>
+
+  <div class="section-title">
+    زمان برگزاری
+  </div>
+
+
+  <div class="card schedule">
+
+    <div class="schedule-main">
+
+      <div class="schedule-icon">
+        ◷
+      </div>
+
+      <div class="schedule-text">
+
+        <b>هیئت هفتگی</b>
+
+        <small>
+          هر سه‌شنبه
+        </small>
+
+      </div>
+
+    </div>
+
+    <div class="schedule-time">
+      ۲۰:۳۰
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PHONE ================= -->
+
+<section>
+
+  <div class="section-title">
+    ارتباط با هیئت
+  </div>
+
+
+  <div class="card phone">
+
+    <div class="phone-info">
+
+      <div class="phone-icon">
+        ☎
+      </div>
+
+      <div>
+
+        <div class="phone-title">
+          شماره تماس
+        </div>
+
+        <div class="number">
+          ۰۹۳۷۶۰۶۷۱۸۳
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <a
+      class="call-button"
+      href="tel:09376067183">
+
+      تماس
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ADDRESS ================= -->
+
+<section>
+
+  <div class="section-title">
+    آدرس هیئت
+  </div>
+
+
+  <div class="card">
+
+    <div class="address-title">
+
+      <div class="address-icon">
+        📍
+      </div>
+
+      <span>
+        محل برگزاری مراسم
+      </span>
+
+    </div>
+
+
+    <div class="address">
+
+      بندرعباس، بلوار امام حسین،
+      شهرک طلائیه فاز اول،
+      مسجد حضرت فاطمه معصومه (ص)
+
+    </div>
+
+
+    <div class="map-buttons">
+
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=مسجد+حضرت+فاطمه+معصومه+بندرعباس+شهرک+طلائیه"
+        target="_blank"
+        rel="noopener">
+
+        Google Maps
+
+      </a>
+
+
+      <a
+        href="https://neshan.org/maps/search/مسجد%20حضرت%20فاطمه%20معصومه%20بندرعباس"
+        target="_blank"
+        rel="noopener">
+
+        نشان
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <div class="footer-line"></div>
+
+  هیئت معظم حسینیون
+
+  <br>
+
+  رسانه و راه‌های ارتباطی هیئت
+
+</footer>
+
+
+</main>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+document.querySelectorAll('.report-card').forEach(card => {
+
+  const gallery = card.querySelector('.report-gallery');
+
+  const slides = [
+    ...card.querySelectorAll('.report-slide')
+  ];
+
+  const dotGroups = [
+    ...card.querySelectorAll('.slide-dots')
+  ];
+
+
+  function setActive(index){
+
+    slides.forEach((slide,i)=>{
+
+      slide.classList.toggle(
+        'is-active',
+        i === index
+      );
+
+    });
+
+
+    dotGroups.forEach(group=>{
+
+      [...group.children].forEach((dot,i)=>{
+
+        dot.classList.toggle(
+          'active',
+          i === index
+        );
+
+      });
+
+    });
+
+  }
+
+
+  const observer =
+    new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if(
+            entry.isIntersecting &&
+            entry.intersectionRatio >= 0.6
+          ){
+
+            const index =
+              slides.indexOf(entry.target);
+
+            if(index !== -1){
+
+              setActive(index);
+
+            }
+
+          }
+
+        });
+
+      },
+
+      {
+        root:gallery,
+        threshold:0.6
+      }
+
+    );
+
+
+  slides.forEach(slide => {
+
+    observer.observe(slide);
+
+  });
+
+
+  dotGroups.forEach(group => {
+
+    [...group.children].forEach(
+      (dot,index) => {
+
+        dot.addEventListener(
+          'click',
+          () => {
+
+            slides[index].scrollIntoView({
+              behavior:'smooth',
+              block:'nearest',
+              inline:'start'
+            });
+
+          }
+        );
+
+      }
+    );
+
+  });
+
+
+  setActive(0);
+
+});
+
+</script>
+
+
+</body>
+</html>
