@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>هیئت معظم حسینیون</title>
+<title>هیئت معظم حسینیون | بندرعباس</title>
+
+<meta name="description" content="هیئت معظم حسینیون بندرعباس">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
 
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -20,14 +22,23 @@ html{
 }
 
 body{
-    font-family:'Vazirmatn',Tahoma,sans-serif;
-    background:
-        radial-gradient(circle at 50% -10%,rgba(120,0,0,.18),transparent 35%),
-        #050505;
+    background:#050505;
     color:#fff;
-    min-height:100vh;
+    font-family:Tahoma,Arial,sans-serif;
     overflow-x:hidden;
 }
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.page{
+    width:min(94%,720px);
+    margin:auto;
+}
+
+/* ================= BACKGROUND ================= */
 
 body::before{
     content:"";
@@ -35,674 +46,1197 @@ body::before{
     inset:0;
     pointer-events:none;
     background:
-        radial-gradient(circle at 20% 20%,rgba(255,0,0,.025),transparent 30%),
-        radial-gradient(circle at 80% 80%,rgba(255,0,0,.025),transparent 30%);
+    radial-gradient(circle at 50% -10%,rgba(150,0,0,.22),transparent 32%),
+    radial-gradient(circle at 0% 70%,rgba(90,0,0,.08),transparent 30%);
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.035;
+    background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
     z-index:-1;
 }
 
-.container{
-    width:min(94%,720px);
-    margin:auto;
-}
-
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
-    min-height:470px;
+    min-height:88vh;
     display:flex;
+    flex-direction:column;
     align-items:center;
     justify-content:center;
     text-align:center;
     position:relative;
-    padding:60px 20px 45px;
+    padding:40px 0;
 }
 
-.hero::before{
-    content:"";
+.hero-glow{
     position:absolute;
     width:280px;
     height:280px;
     border-radius:50%;
-    background:rgba(120,0,0,.12);
-    filter:blur(70px);
+    background:#8b0000;
+    filter:blur(130px);
+    opacity:.16;
+    z-index:-1;
 }
 
-.profile{
-    position:relative;
-    z-index:2;
-}
-
-/* فقط لوگو اینجاست */
 .logo-wrap{
-    width:145px;
-    height:145px;
-    margin:auto;
-    border-radius:50%;
-    padding:5px;
-    background:linear-gradient(135deg,#8e0000,#1b1b1b,#5d0000);
-    box-shadow:
-        0 0 0 1px rgba(255,255,255,.05),
-        0 0 40px rgba(120,0,0,.28);
+    position:relative;
+    margin-bottom:24px;
+    animation:heroLogo 1.2s ease both;
 }
 
-.logo-wrap img{
-    width:100%;
-    height:100%;
+.logo-ring{
+    position:absolute;
+    inset:-12px;
+    border-radius:50%;
+    border:1px solid rgba(180,0,0,.35);
+    animation:pulse 3s infinite;
+}
+
+.logo{
+    width:125px;
+    height:125px;
     object-fit:cover;
     border-radius:50%;
-    background:#090909;
+    border:1px solid rgba(255,255,255,.16);
+    box-shadow:
+    0 0 0 7px rgba(255,255,255,.015),
+    0 0 55px rgba(120,0,0,.35);
 }
 
 .hero h1{
-    margin-top:25px;
-    font-size:30px;
-    font-weight:800;
+    font-size:clamp(27px,7vw,43px);
+    font-weight:900;
+    letter-spacing:-1px;
+    animation:fadeUp .9s .15s both;
 }
 
-.hero p{
-    margin-top:10px;
+.hero-subtitle{
+    margin-top:8px;
     color:#999;
-    font-size:14px;
+    font-size:13px;
+    animation:fadeUp .9s .3s both;
 }
 
 .hero-line{
-    width:65px;
+    width:55px;
     height:2px;
-    background:#8c0000;
+    background:#8d0000;
     margin:20px auto;
-    border-radius:20px;
+    box-shadow:0 0 15px rgba(150,0,0,.6);
+    animation:fadeUp .9s .4s both;
 }
 
-/* SECTION */
+.hero-location{
+    color:#777;
+    font-size:11px;
+    animation:fadeUp .9s .5s both;
+}
+
+.scroll-hint{
+    position:absolute;
+    bottom:22px;
+    color:#555;
+    font-size:10px;
+}
+
+.scroll-hint span{
+    display:block;
+    margin-top:6px;
+    color:#777;
+    animation:scrollArrow 1.5s infinite;
+}
+
+/* ================= SECTIONS ================= */
 
 section{
-    padding:22px 0;
+    margin-bottom:75px;
 }
 
-.section-title{
+.section-head{
     display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:17px;
+    align-items:end;
+    justify-content:space-between;
+    margin-bottom:18px;
 }
 
-.section-title span{
-    width:4px;
-    height:25px;
-    background:#8d0000;
-    border-radius:20px;
+.section-head small{
+    color:#700000;
+    font-size:10px;
+    letter-spacing:1px;
 }
 
-.section-title h2{
-    font-size:18px;
+.section-head h2{
+    font-size:20px;
+    font-weight:800;
 }
 
-/* REPORTAGE */
+.section-head p{
+    color:#777;
+    font-size:11px;
+    margin-top:3px;
+}
+
+/* ================= REPORTAGE ================= */
+
+.report-shell{
+    position:relative;
+    padding:7px;
+    border-radius:25px;
+    background:
+    linear-gradient(
+        145deg,
+        rgba(150,0,0,.28),
+        rgba(255,255,255,.03) 45%,
+        rgba(255,255,255,.01)
+    );
+    box-shadow:0 30px 70px rgba(0,0,0,.5);
+}
 
 .report-card{
-    background:linear-gradient(
-        145deg,
-        rgba(255,255,255,.055),
-        rgba(255,255,255,.018)
-    );
-    border:1px solid rgba(255,255,255,.07);
-    border-radius:24px;
-    padding:12px;
+    background:#0d0d0d;
+    border-radius:20px;
     overflow:hidden;
+    border:1px solid rgba(255,255,255,.07);
 }
 
 .report-images{
     display:flex;
-    gap:10px;
     overflow-x:auto;
     scroll-snap-type:x mandatory;
-    scroll-behavior:smooth;
-    overscroll-behavior-x:contain;
-    -webkit-overflow-scrolling:touch;
     scrollbar-width:none;
-
-    /* برای اینکه اسلایدها درست کار کنند */
-    direction:ltr;
-    touch-action:pan-x;
 }
 
 .report-images::-webkit-scrollbar{
     display:none;
 }
 
-/* فقط عکس‌های گزارش تصویری */
 .report-images img{
     flex:0 0 100%;
     width:100%;
-    aspect-ratio:4/5;
+    height:470px;
     object-fit:cover;
-    border-radius:18px;
     scroll-snap-align:center;
     user-select:none;
-    -webkit-user-drag:none;
 }
 
-.report-info{
-    padding:15px 5px 5px;
+.report-content{
+    padding:18px 17px 20px;
 }
 
-.report-info h3{
-    font-size:16px;
-}
-
-.report-info p{
-    margin-top:6px;
-    font-size:12px;
-    color:#888;
-}
-
-/* DOTS */
-
-.gallery-dots{
+.report-top{
     display:flex;
-    justify-content:center;
     align-items:center;
-    gap:6px;
-    margin-top:12px;
-}
-
-.gallery-dots button{
-    width:6px;
-    height:6px;
-    padding:0;
-    border:none;
-    border-radius:50px;
-    background:#333;
-    cursor:pointer;
-    transition:.25s;
-}
-
-.gallery-dots button.active{
-    width:20px;
-    background:#8d0000;
-    box-shadow:0 0 8px rgba(141,0,0,.45);
-}
-
-/* SOCIAL */
-
-.social-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
+    justify-content:space-between;
     gap:10px;
 }
 
-.social-card{
-    text-decoration:none;
+.report-date{
     color:#fff;
-    background:linear-gradient(
+    font-size:18px;
+    font-weight:bold;
+}
+
+.report-tag{
+    padding:5px 10px;
+    border-radius:30px;
+    background:rgba(130,0,0,.15);
+    border:1px solid rgba(150,0,0,.3);
+    color:#b77;
+    font-size:9px;
+}
+
+.report-description{
+    color:#777;
+    font-size:11px;
+    margin-top:5px;
+}
+
+.report-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:16px;
+    padding-top:12px;
+    border-top:1px solid #1d1d1d;
+    color:#555;
+    font-size:9px;
+}
+
+.gallery-dots{
+    display:flex;
+    gap:5px;
+    margin-top:12px;
+    justify-content:center;
+}
+
+.gallery-dots span{
+    width:5px;
+    height:5px;
+    background:#333;
+    border-radius:20px;
+}
+
+.gallery-dots span:first-child{
+    width:18px;
+    background:#8d0000;
+}
+
+/* =====================================================
+   SOCIAL MEDIA
+===================================================== */
+
+.social-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.social-card{
+    position:relative;
+    min-height:130px;
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    overflow:hidden;
+
+    background:
+    linear-gradient(
         145deg,
-        rgba(255,255,255,.055),
-        rgba(255,255,255,.018)
+        #151515,
+        #090909
     );
-    border:1px solid rgba(255,255,255,.07);
-    border-radius:19px;
-    padding:17px 14px;
+
+    border:1px solid #222;
+    border-radius:20px;
+
+    transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.social-card::before{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:#8d0000;
+    filter:blur(60px);
+    opacity:.12;
+    left:-35px;
+    bottom:-45px;
+}
+
+.social-card:hover{
+    transform:translateY(-5px);
+    border-color:#650000;
+    box-shadow:0 18px 40px rgba(0,0,0,.4);
+}
+
+/* لوگوی برنامه */
+
+.social-icon{
+    position:relative;
+    width:48px;
+    height:48px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:#191919;
+    border:1px solid #292929;
+
+    overflow:hidden;
+
+    box-shadow:
+    inset 0 0 20px rgba(255,255,255,.025),
+    0 8px 20px rgba(0,0,0,.25);
+}
+
+.social-icon svg{
+    width:27px;
+    height:27px;
+    display:block;
+}
+
+/* اسم */
+
+.social-name{
+    position:relative;
+    margin-top:13px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.social-handle{
+    position:relative;
+    color:#666;
+    font-size:9px;
+    direction:ltr;
+    text-align:right;
+    margin-top:3px;
+}
+
+/* ================= INSTAGRAM ================= */
+
+.instagram-icon svg{
+    filter:
+    drop-shadow(0 0 5px rgba(255,0,90,.15));
+}
+
+/* ================= TELEGRAM ================= */
+
+.telegram-icon svg{
+    filter:
+    drop-shadow(0 0 5px rgba(0,150,255,.15));
+}
+
+/* ================= RUBIKA ================= */
+
+.rubika-icon svg{
+    filter:
+    drop-shadow(0 0 5px rgba(255,0,80,.15));
+}
+
+/* ================= EITAA ================= */
+
+.eitaa-icon svg{
+    filter:
+    drop-shadow(0 0 5px rgba(255,70,20,.15));
+}
+
+/* ================= SHUBAYER ================= */
+
+.media-feature{
+    margin-top:12px;
+    padding:20px;
+
+    border-radius:20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+
+    background:
+    linear-gradient(
+        110deg,
+        #180606,
+        #101010 65%
+    );
+
+    border:1px solid #321010;
+}
+
+.media-brand{
     display:flex;
     align-items:center;
     gap:12px;
 }
 
-.social-icon{
-    width:42px;
-    height:42px;
-    min-width:42px;
+.media-logo{
+    width:45px;
+    height:45px;
     border-radius:13px;
     display:flex;
     align-items:center;
     justify-content:center;
-    background:#101010;
-    border:1px solid rgba(255,255,255,.06);
+
+    background:#181818;
+    border:1px solid #292929;
+
+    font-weight:900;
+    color:#eee;
 }
 
-.social-icon svg{
-    width:21px;
-    height:21px;
-    fill:none;
-    stroke:#fff;
-    stroke-width:1.8;
+.media-logo span{
+    color:#9a0000;
 }
 
-.social-text strong{
-    display:block;
-    font-size:13px;
+.media-info h3{
+    font-size:16px;
 }
 
-.social-text small{
-    display:block;
-    margin-top:4px;
+.media-info p{
     color:#777;
     font-size:10px;
-    direction:ltr;
+    margin-top:3px;
 }
 
-/* SHUBAYER */
-
-.media-card{
-    margin-top:12px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:15px;
-    padding:18px;
-    border-radius:22px;
-    background:linear-gradient(
-        135deg,
-        rgba(130,0,0,.18),
-        rgba(255,255,255,.025)
-    );
-    border:1px solid rgba(255,255,255,.07);
-}
-
-.media-info{
-    display:flex;
-    align-items:center;
-    gap:13px;
-}
-
-.media-logo{
-    width:48px;
-    height:48px;
-    border-radius:15px;
-    background:#0b0b0b;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:25px;
-    font-weight:800;
-}
-
-.media-info strong{
-    display:block;
-    font-size:14px;
-}
-
-.media-info small{
-    display:block;
-    margin-top:4px;
-    color:#777;
+.media-button{
+    white-space:nowrap;
+    padding:9px 15px;
+    border-radius:10px;
+    background:#850000;
     font-size:10px;
+    transition:.25s;
 }
 
-.media-btn{
-    text-decoration:none;
-    color:#fff;
-    font-size:11px;
-    padding:9px 13px;
-    border-radius:12px;
-    background:#720000;
+.media-button:hover{
+    background:#aa0000;
 }
 
-/* SCHEDULE */
+/* ================= SCHEDULE ================= */
 
 .schedule{
-    text-align:center;
-    padding:28px 18px;
-    border-radius:25px;
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(130,0,0,.16),
-            transparent 65%
-        ),
-        rgba(255,255,255,.025);
-    border:1px solid rgba(255,255,255,.07);
+    position:relative;
+    padding:25px 20px;
+    border-radius:22px;
+    overflow:hidden;
+    background:#0e0e0e;
+    border:1px solid #222;
 }
 
-.schedule-day{
-    color:#888;
-    font-size:14px;
-}
-
-.schedule-time{
-    font-size:52px;
-    font-weight:800;
-    margin:8px 0;
-    direction:ltr;
+.schedule::after{
+    content:"";
+    position:absolute;
+    width:170px;
+    height:170px;
+    left:-80px;
+    top:-80px;
+    background:#850000;
+    opacity:.10;
+    filter:blur(65px);
 }
 
 .schedule-label{
     color:#777;
-    font-size:12px;
+    font-size:10px;
 }
 
-/* CONTACT */
+.schedule-title{
+    margin-top:3px;
+    font-size:17px;
+    font-weight:bold;
+}
+
+.schedule-time{
+    margin-top:15px;
+    display:flex;
+    align-items:end;
+    gap:10px;
+}
+
+.schedule-time strong{
+    font-size:42px;
+    line-height:1;
+    letter-spacing:-2px;
+}
+
+.schedule-time span{
+    color:#777;
+    font-size:11px;
+    padding-bottom:4px;
+}
+
+.schedule-days{
+    margin-top:20px;
+    padding-top:14px;
+    border-top:1px solid #202020;
+    display:flex;
+    justify-content:space-between;
+    color:#777;
+    font-size:10px;
+}
+
+.schedule-days b{
+    color:#ddd;
+}
+
+/* ================= CONTACT ================= */
 
 .contact-card{
-    padding:20px;
-    border-radius:23px;
-    background:rgba(255,255,255,.025);
-    border:1px solid rgba(255,255,255,.07);
-    text-align:center;
+    padding:22px;
+    border-radius:21px;
+    background:
+    linear-gradient(
+        135deg,
+        #121212,
+        #0b0b0b
+    );
+    border:1px solid #242424;
+}
+
+.contact-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.contact-label{
+    color:#777;
+    font-size:10px;
 }
 
 .phone{
     direction:ltr;
+    font-size:20px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.call-button{
     display:block;
-    color:#fff;
-    font-size:24px;
-    font-weight:700;
-    text-decoration:none;
-}
-
-.phone-label{
-    margin-top:7px;
-    color:#777;
-    font-size:11px;
-}
-
-.call-btn{
-    display:inline-flex;
+    text-align:center;
     margin-top:17px;
-    padding:11px 20px;
-    border-radius:14px;
-    text-decoration:none;
-    color:#fff;
-    background:#760000;
-    font-size:12px;
+    padding:12px;
+    border-radius:12px;
+    background:#850000;
+    font-size:11px;
+    transition:.25s;
 }
 
-/* ADDRESS */
+.call-button:hover{
+    background:#a90000;
+}
+
+/* ================= ADDRESS ================= */
 
 .address-card{
-    padding:20px;
-    border-radius:23px;
-    background:rgba(255,255,255,.025);
-    border:1px solid rgba(255,255,255,.07);
+    padding:22px;
+    border-radius:21px;
+    background:#0e0e0e;
+    border:1px solid #222;
+}
+
+.address-icon{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:13px;
+    background:#191919;
+    border:1px solid #292929;
+    margin-bottom:14px;
+    font-size:18px;
 }
 
 .address-text{
-    color:#aaa;
-    font-size:13px;
+    color:#bbb;
+    font-size:12px;
     line-height:2;
-    text-align:center;
 }
 
-.map-buttons{
+.map-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:10px;
-    margin-top:17px;
+    margin-top:18px;
 }
 
 .map-btn{
-    text-decoration:none;
-    color:#fff;
+    padding:12px 8px;
     text-align:center;
-    padding:13px;
-    border-radius:14px;
-    background:#101010;
-    border:1px solid rgba(255,255,255,.07);
-    font-size:12px;
+    border-radius:11px;
+    background:#171717;
+    border:1px solid #292929;
+    color:#ccc;
+    font-size:10px;
+    transition:.25s;
 }
 
-/* FOOTER */
+.map-btn:hover{
+    background:#1e1e1e;
+    border-color:#680000;
+}
+
+/* ================= FOOTER ================= */
 
 footer{
-    padding:45px 20px 30px;
+    padding:0 0 35px;
     text-align:center;
-    color:#555;
-    font-size:10px;
+    color:#444;
+    font-size:9px;
 }
 
-footer strong{
-    color:#777;
+.footer-line{
+    width:30px;
+    height:1px;
+    background:#500000;
+    margin:0 auto 10px;
 }
 
-@media(max-width:430px){
+/* ================= ANIMATIONS ================= */
 
-    .hero{
-        min-height:430px;
-        padding-top:45px;
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
     }
 
-    .logo-wrap{
-        width:125px;
-        height:125px;
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes heroLogo{
+
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:scale(1);
+        opacity:.5;
+    }
+
+    50%{
+        transform:scale(1.08);
+        opacity:.15;
+    }
+
+}
+
+@keyframes scrollArrow{
+
+    0%,100%{
+        transform:translateY(0);
+        opacity:.5;
+    }
+
+    50%{
+        transform:translateY(5px);
+        opacity:1;
+    }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:520px){
+
+    .page{
+        width:91%;
+    }
+
+    .hero{
+        min-height:82vh;
+    }
+
+    .logo{
+        width:110px;
+        height:110px;
     }
 
     .hero h1{
-        font-size:26px;
+        font-size:27px;
+    }
+
+    .report-images img{
+        height:410px;
     }
 
     .social-card{
-        padding:14px 10px;
+        min-height:120px;
     }
 
-    .social-icon{
-        width:38px;
-        height:38px;
-        min-width:38px;
+    .schedule-time strong{
+        font-size:38px;
     }
 
-    .schedule-time{
-        font-size:46px;
-    }
 }
+
+@media(max-width:370px){
+
+    .social-container{
+        grid-template-columns:1fr;
+    }
+
+    .social-card{
+        min-height:105px;
+    }
+
+    .media-feature{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .media-button{
+        text-align:center;
+    }
+
+}
+
 </style>
 </head>
 
+
 <body>
 
-<header class="hero">
+<div class="page">
 
-    <div class="profile">
 
-        <!-- لوگو: فقط همین فایل -->
-        <div class="logo-wrap">
-            <img
-                src="file_00000000142081f4a98e6146d9a0e812.png"
-                alt="لوگوی هیئت معظم حسینیون"
-            >
-        </div>
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-        <h1>هیئت معظم حسینیون</h1>
+<section class="hero">
 
-        <div class="hero-line"></div>
+    <div class="hero-glow"></div>
 
-        <p>رسانه و پایگاه محبان اهل‌بیت علیهم‌السلام</p>
+    <div class="logo-wrap">
+
+        <div class="logo-ring"></div>
+
+        <img
+            class="logo"
+            src="IMG_20251102_193153_076.webp"
+            alt="لوگوی هیئت معظم حسینیون"
+        >
 
     </div>
 
-</header>
+    <h1>
+        هیئت معظم حسینیون
+    </h1>
 
+    <div class="hero-line"></div>
 
-<main class="container">
+    <p class="hero-subtitle">
+        رسانه و پایگاه رسمی هیئت معظم حسینیون
+    </p>
 
+    <p class="hero-location">
+        بندرعباس · شهرک طلائیه
+    </p>
 
-<!-- ================= گزارش تصویری ================= -->
+    <div class="scroll-hint">
 
-<section>
+        مشاهده برنامه‌ها
 
-    <div class="section-title">
-        <span></span>
-        <h2>گزارش تصویری</h2>
-    </div>
-
-    <div class="report-card">
-
-        <div class="report-images" id="reportGallery">
-
-            <!-- عکس گزارش ۱ -->
-            <img
-                src="IMG_20251102_193153_076.webp"
-                alt="گزارش تصویری هیئت"
-                draggable="false"
-            >
-
-            <!-- عکس گزارش ۲ -->
-            <img
-                src="file_00000000d17482109c9a88afbf751dd6.png"
-                alt="گزارش تصویری هیئت"
-                draggable="false"
-            >
-
-            <!-- عکس گزارش ۳ -->
-            <img
-                src="file_00000000fbc881f4a146cba041142c84.png"
-                alt="گزارش تصویری هیئت"
-                draggable="false"
-            >
-
-        </div>
-
-
-        <div class="report-info">
-
-            <h3>
-                روضه هفتگی به نیت فرج امام زمان (عج)
-            </h3>
-
-            <p>
-                گزارش تصویری هیئت معظم حسینیون
-            </p>
-
-        </div>
-
-
-        <!-- فقط ۳ کپسول چون فقط ۳ عکس داریم -->
-
-        <div class="gallery-dots" id="galleryDots">
-
-            <button
-                class="active"
-                data-slide="0"
-                aria-label="تصویر اول"
-            ></button>
-
-            <button
-                data-slide="1"
-                aria-label="تصویر دوم"
-            ></button>
-
-            <button
-                data-slide="2"
-                aria-label="تصویر سوم"
-            ></button>
-
-        </div>
+        <span>↓</span>
 
     </div>
 
 </section>
 
 
-<!-- ================= فضای مجازی ================= -->
+<!-- =====================================================
+     REPORTAGE
+===================================================== -->
 
 <section>
 
-    <div class="section-title">
-        <span></span>
-        <h2>فضای مجازی</h2>
+    <div class="section-head">
+
+        <div>
+
+            <small>
+                01 / MEDIA
+            </small>
+
+            <h2>
+                گزارش تصویری
+            </h2>
+
+            <p>
+                قاب‌هایی از حال و هوای هیئت
+            </p>
+
+        </div>
+
     </div>
 
-    <div class="social-grid">
+
+    <div class="report-shell">
+
+        <div class="report-card">
+
+            <div class="report-images">
+
+                <img
+                    src="file_00000000142081f4a98e6146d9a0e812.png"
+                    alt="گزارش تصویری هیئت"
+                >
+
+                <img
+                    src="file_00000000d17482109c9a88afbf751dd6.png"
+                    alt="گزارش تصویری هیئت"
+                >
+
+                <img
+                    src="file_00000000fbc881f4a146cba041142c84.png"
+                    alt="گزارش تصویری هیئت"
+                >
+
+            </div>
+
+
+            <div class="report-content">
+
+                <div class="report-top">
+
+                    <div class="report-date">
+                        ۱۷ شهریورماه
+                    </div>
+
+                    <div class="report-tag">
+                        گزارش تصویری
+                    </div>
+
+                </div>
+
+
+                <div class="report-description">
+                    روضه هفتگی به نیت فرج امام زمان (عج)
+                </div>
+
+
+                <div class="report-footer">
+
+                    <span>
+                        هیئت معظم حسینیون
+                    </span>
+
+                    <span>
+                        ← برای مشاهده تصاویر بکشید
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="gallery-dots">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SOCIAL MEDIA
+===================================================== -->
+
+<section>
+
+    <div class="section-head">
+
+        <div>
+
+            <small>
+                02 / SOCIAL
+            </small>
+
+            <h2>
+                فضای مجازی
+            </h2>
+
+            <p>
+                ما را در شبکه‌های اجتماعی دنبال کنید
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="social-container">
+
+
+        <!-- INSTAGRAM -->
 
         <a
             class="social-card"
             href="https://www.instagram.com/husseiniyun.bnd?stkn=MXhqN2xuMzY4ZnR0NA=="
             target="_blank"
+            rel="noopener noreferrer"
         >
-            <div class="social-icon">
-                <svg viewBox="0 0 24 24">
-                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-                    <circle cx="12" cy="12" r="4"></circle>
-                    <circle cx="17.5" cy="6.5" r="1"
+
+            <div class="social-icon instagram-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+
+                    <rect
+                        x="3"
+                        y="3"
+                        width="18"
+                        height="18"
+                        rx="5"
+                        stroke="white"
+                        stroke-width="1.8"
+                    />
+
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="4"
+                        stroke="white"
+                        stroke-width="1.8"
+                    />
+
+                    <circle
+                        cx="17.5"
+                        cy="6.5"
+                        r="1.1"
                         fill="white"
-                        stroke="none">
-                    </circle>
+                    />
+
                 </svg>
+
             </div>
 
-            <div class="social-text">
-                <strong>اینستاگرام هیئت</strong>
-                <small>@husseiniyun.bnd</small>
+
+            <div>
+
+                <div class="social-name">
+                    اینستاگرام هیئت
+                </div>
+
+                <div class="social-handle">
+                    @husseiniyun.bnd
+                </div>
+
             </div>
+
         </a>
 
+
+        <!-- TELEGRAM -->
 
         <a
             class="social-card"
             href="https://t.me/husseniyun_bnd"
             target="_blank"
+            rel="noopener noreferrer"
         >
-            <div class="social-icon">
-                <svg viewBox="0 0 24 24">
-                    <path d="M21 4L3.5 10.7c-.8.3-.8 1.4 0 1.7l4.5 1.5 1.7 5.3c.2.7 1.1.9 1.6.4l2.5-2.6 4.5 3.3c.6.4 1.4.1 1.6-.6L23 5.2c.2-.9-1-1.6-2-1.2Z"></path>
-                    <path d="M8 13.9L18.5 7"></path>
+
+            <div class="social-icon telegram-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="9"
+                        stroke="white"
+                        stroke-width="1.5"
+                    />
+
+                    <path
+                        d="M17.5 7.5L6.8 11.6C6.1 11.9 6.1 12.3 6.7 12.5L9.4 13.4L10.4 16.6C10.6 17.2 10.9 17.2 11.3 16.8L12.9 15.2L15.7 17.3C16.2 17.6 16.6 17.4 16.7 16.8L18.3 8.1C18.4 7.5 18 7.3 17.5 7.5Z"
+                        fill="white"
+                    />
+
                 </svg>
+
             </div>
 
-            <div class="social-text">
-                <strong>تلگرام</strong>
-                <small>@husseniyun_bnd</small>
+
+            <div>
+
+                <div class="social-name">
+                    تلگرام
+                </div>
+
+                <div class="social-handle">
+                    @husseniyun_bnd
+                </div>
+
             </div>
+
         </a>
 
+
+        <!-- RUBIKA -->
 
         <a
             class="social-card"
             href="https://rubika.ir/husseniyun_bnd"
             target="_blank"
+            rel="noopener noreferrer"
         >
-            <div class="social-icon">
-                <svg viewBox="0 0 24 24">
-                    <path d="M7 4h10a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-4l-4 4v-4H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Z"></path>
+
+            <div class="social-icon rubika-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+
+                    <path
+                        d="M7 3.8H17C18.8 3.8 20.2 5.2 20.2 7V17C20.2 18.8 18.8 20.2 17 20.2H7C5.2 20.2 3.8 18.8 3.8 17V7C3.8 5.2 5.2 3.8 7 3.8Z"
+                        stroke="white"
+                        stroke-width="1.6"
+                    />
+
+                    <path
+                        d="M8 8.2H16L12 12L8 8.2Z"
+                        fill="white"
+                    />
+
+                    <path
+                        d="M8 15.8H16"
+                        stroke="white"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                    />
+
                 </svg>
+
             </div>
 
-            <div class="social-text">
-                <strong>روبیکا</strong>
-                <small>@husseniyun_bnd</small>
+
+            <div>
+
+                <div class="social-name">
+                    روبیکا
+                </div>
+
+                <div class="social-handle">
+                    husseniyun_bnd
+                </div>
+
             </div>
+
         </a>
 
+
+        <!-- EITAA -->
 
         <a
             class="social-card"
             href="https://eitaa.com/husseniyun_bnd"
             target="_blank"
+            rel="noopener noreferrer"
         >
-            <div class="social-icon">
-                <svg viewBox="0 0 24 24">
-                    <path d="M12 3.5c-5 0-9 3.5-9 8 0 2.5 1.4 4.8 3.7 6.2L6 21l4-2c.7.2 1.3.3 2 .3 5 0 9-3.5 9-7.8s-4-8-9-8Z"></path>
+
+            <div class="social-icon eitaa-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+
+                    <path
+                        d="M6 5.5C6 4.67 6.67 4 7.5 4H16.5C17.33 4 18 4.67 18 5.5V14.2C18 15.03 17.33 15.7 16.5 15.7H11.2L8 19V15.7H7.5C6.67 15.7 6 15.03 6 14.2V5.5Z"
+                        stroke="white"
+                        stroke-width="1.6"
+                        stroke-linejoin="round"
+                    />
+
+                    <circle
+                        cx="9"
+                        cy="9"
+                        r="1"
+                        fill="white"
+                    />
+
+                    <circle
+                        cx="12"
+                        cy="9"
+                        r="1"
+                        fill="white"
+                    />
+
+                    <circle
+                        cx="15"
+                        cy="9"
+                        r="1"
+                        fill="white"
+                    />
+
                 </svg>
+
             </div>
 
-            <div class="social-text">
-                <strong>ایتا</strong>
-                <small>@husseniyun_bnd</small>
+
+            <div>
+
+                <div class="social-name">
+                    ایتا
+                </div>
+
+                <div class="social-handle">
+                    husseniyun_bnd
+                </div>
+
             </div>
+
         </a>
+
 
     </div>
 
 
-    <div class="media-card">
+    <!-- SHUBAYER MEDIA -->
 
-        <div class="media-info">
+    <div class="media-feature">
+
+        <div class="media-brand">
 
             <div class="media-logo">
-                ش
+                <span>ش</span>
             </div>
 
-            <div>
-                <strong>شُبَیر مدیا</strong>
-                <small>رسانه هیئت</small>
+
+            <div class="media-info">
+
+                <h3>
+                    شُبَیر مدیا
+                </h3>
+
+                <p>
+                    رسانه هیئت معظم حسینیون
+                </p>
+
             </div>
 
         </div>
 
+
         <a
-            class="media-btn"
+            class="media-button"
             href="https://www.instagram.com/shubayer_media?stkn=MWI5Z3J0dGs0cDA5cg=="
             target="_blank"
+            rel="noopener noreferrer"
         >
-            مشاهده
+            مشاهده صفحه
         </a>
 
     </div>
@@ -710,27 +1244,66 @@ footer strong{
 </section>
 
 
-<!-- ================= زمان برگزاری ================= -->
+<!-- =====================================================
+     SCHEDULE
+===================================================== -->
 
 <section>
 
-    <div class="section-title">
-        <span></span>
-        <h2>زمان برگزاری</h2>
+    <div class="section-head">
+
+        <div>
+
+            <small>
+                03 / SCHEDULE
+            </small>
+
+            <h2>
+                زمان مراسم
+            </h2>
+
+            <p>
+                برنامه هفتگی هیئت
+            </p>
+
+        </div>
+
     </div>
+
 
     <div class="schedule">
 
-        <div class="schedule-day">
-            سه‌شنبه‌ها
+        <div class="schedule-label">
+            مراسم هفتگی
+        </div>
+
+        <div class="schedule-title">
+            هیئت هفتگی حسینیون
         </div>
 
         <div class="schedule-time">
-            ۲۰:۳۰
+
+            <strong>
+                ۲۰:۳۰
+            </strong>
+
+            <span>
+                ساعت شروع مراسم
+            </span>
+
         </div>
 
-        <div class="schedule-label">
-            مراسم هفتگی هیئت
+
+        <div class="schedule-days">
+
+            <span>
+                روز برگزاری
+            </span>
+
+            <b>
+                سه‌شنبه‌ها
+            </b>
+
         </div>
 
     </div>
@@ -738,30 +1311,54 @@ footer strong{
 </section>
 
 
-<!-- ================= تماس ================= -->
+<!-- =====================================================
+     CONTACT
+===================================================== -->
 
 <section>
 
-    <div class="section-title">
-        <span></span>
-        <h2>ارتباط با هیئت</h2>
+    <div class="section-head">
+
+        <div>
+
+            <small>
+                04 / CONTACT
+            </small>
+
+            <h2>
+                ارتباط با هیئت
+            </h2>
+
+            <p>
+                برای هماهنگی و ارتباط
+            </p>
+
+        </div>
+
     </div>
+
 
     <div class="contact-card">
 
-        <a
-            class="phone"
-            href="tel:09376067183"
-        >
-            ۰۹۳۷۶۰۶۷۱۸۳
-        </a>
+        <div class="contact-row">
 
-        <div class="phone-label">
-            شماره تماس هیئت
+            <div>
+
+                <div class="contact-label">
+                    شماره تماس
+                </div>
+
+                <div class="phone">
+                    ۰۹۳۷۶۰۶۷۱۸۳
+                </div>
+
+            </div>
+
         </div>
 
+
         <a
-            class="call-btn"
+            class="call-button"
             href="tel:09376067183"
         >
             تماس با هیئت
@@ -772,39 +1369,68 @@ footer strong{
 </section>
 
 
-<!-- ================= آدرس ================= -->
+<!-- =====================================================
+     ADDRESS
+===================================================== -->
 
 <section>
 
-    <div class="section-title">
-        <span></span>
-        <h2>آدرس و مسیریابی</h2>
+    <div class="section-head">
+
+        <div>
+
+            <small>
+                05 / LOCATION
+            </small>
+
+            <h2>
+                آدرس هیئت
+            </h2>
+
+            <p>
+                منتظر حضور شما هستیم
+            </p>
+
+        </div>
+
     </div>
+
 
     <div class="address-card">
 
+        <div class="address-icon">
+            ⌖
+        </div>
+
+
         <div class="address-text">
+
             بندرعباس، بلوار امام حسین،
             شهرک طلائیه فاز اول،
             مسجد حضرت فاطمه معصومه (ص)
+
         </div>
 
-        <div class="map-buttons">
+
+        <div class="map-grid">
 
             <a
                 class="map-btn"
-                href="https://www.google.com/maps/search/?api=1&query=مسجد+حضرت+فاطمه+معصومه+شهرک+طلائیه+بندرعباس"
+                href="https://www.google.com/maps/search/?api=1&query=مسجد+حضرت+فاطمه+معصومه+بندرعباس+شهرک+طلائیه"
                 target="_blank"
+                rel="noopener noreferrer"
             >
-                Google Maps
+                باز کردن در Google Maps
             </a>
 
+
             <a
                 class="map-btn"
-                href="https://neshan.org"
+                href="https://neshan.org/maps/search/مسجد%20حضرت%20فاطمه%20معصومه%20بندرعباس"
                 target="_blank"
+                rel="noopener noreferrer"
             >
-                نشان
+                باز کردن در نشان
             </a>
 
         </div>
@@ -813,168 +1439,66 @@ footer strong{
 
 </section>
 
-</main>
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-    <strong>هیئت معظم حسینیون</strong>
+    <div class="footer-line"></div>
 
-    <br><br>
+    هیئت معظم حسینیون
 
-    محفل عاشقان اهل‌بیت علیهم‌السلام
+    <br>
+
+    بندرعباس
 
 </footer>
 
 
-<!-- ================= اسکریپت گزارش تصویری ================= -->
+</div>
+
 
 <script>
 
-const gallery = document.getElementById("reportGallery");
-const dots = document.querySelectorAll("#galleryDots button");
+const gallery =
+document.querySelector(".report-images");
+
+const dots =
+document.querySelectorAll(".gallery-dots span");
+
 
 if(gallery && dots.length){
 
-    const slides = gallery.querySelectorAll("img");
+    gallery.addEventListener("scroll",()=>{
 
-
-    function updateDots(){
-
-        if(!slides.length) return;
-
-        const galleryRect =
-            gallery.getBoundingClientRect();
-
-        const galleryCenter =
-            galleryRect.left +
-            galleryRect.width / 2;
-
-        let activeIndex = 0;
-        let closestDistance = Infinity;
-
-
-        slides.forEach((slide,index)=>{
-
-            const rect =
-                slide.getBoundingClientRect();
-
-            const slideCenter =
-                rect.left +
-                rect.width / 2;
-
-            const distance =
-                Math.abs(
-                    slideCenter -
-                    galleryCenter
-                );
-
-
-            if(distance < closestDistance){
-
-                closestDistance = distance;
-                activeIndex = index;
-
-            }
-
-        });
-
-
-        dots.forEach((dot,index)=>{
-
-            dot.classList.toggle(
-                "active",
-                index === activeIndex
-            );
-
-        });
-
-    }
-
-
-    /* تشخیص لحظه‌ای هنگام کشیدن عکس */
-
-    let animationFrame = 0;
-
-    gallery.addEventListener(
-        "scroll",
-        ()=>{
-
-            if(animationFrame) return;
-
-            animationFrame =
-                requestAnimationFrame(()=>{
-
-                    animationFrame = 0;
-
-                    updateDots();
-
-                });
-
-        },
-        {
-            passive:true
-        }
-    );
-
-
-    /* کلیک روی کپسول‌ها */
-
-    dots.forEach(dot=>{
-
-        dot.addEventListener(
-            "click",
-            ()=>{
-
-                const index =
-                    Number(
-                        dot.dataset.slide
-                    );
-
-                const slide =
-                    slides[index];
-
-                if(!slide) return;
-
-
-                slide.scrollIntoView({
-
-                    behavior:"smooth",
-
-                    block:"nearest",
-
-                    inline:"center"
-
-                });
-
-            }
+        const index =
+        Math.round(
+            gallery.scrollLeft /
+            gallery.clientWidth
         );
 
+        dots.forEach((dot,i)=>{
+
+            dot.style.width =
+            i === index
+            ? "18px"
+            : "5px";
+
+            dot.style.background =
+            i === index
+            ? "#8d0000"
+            : "#333";
+
+        });
+
     });
-
-
-    window.addEventListener(
-        "resize",
-        updateDots
-    );
-
-
-    window.addEventListener(
-        "load",
-        ()=>{
-            setTimeout(
-                updateDots,
-                50
-            );
-        }
-    );
-
-
-    updateDots();
 
 }
 
 </script>
+
 
 </body>
 </html>
