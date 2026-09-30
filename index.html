@@ -1,739 +1,236 @@
 <!doctype html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>هیئت معظم حسینیون</title>
 
-<style>
-*{box-sizing:border-box}
-
-:root{
-  --bg:#080808;
-  --card:#111;
-  --line:#252525;
-  --text:#f4f4f4;
-  --muted:#a8a8a8;
-  --red:#9d1717;
-  --red2:#d12a2a
+<html lang="fa" dir="rtl">    
+<head>    
+<meta charset="utf-8">    
+<meta name="viewport" content="width=device-width,initial-scale=1">    
+<title>هیئت معظم حسینیون</title>    
+<style>    
+*{box-sizing:border-box}    
+:root{--bg:#080808;--card:#111;--line:#252525;--text:#f4f4f4;--muted:#a8a8a8;--red:#9d1717;--red2:#d12a2a}    
+body{margin:0;background:radial-gradient(circle at top,#180707 0,#080808 34%,#050505 100%);color:var(--text);font-family:Tahoma,Arial,sans-serif}    
+a{text-decoration:none;color:inherit}    
+.page{width:min(100%,620px);margin:auto;padding:22px 16px 34px}    
+header{text-align:center;padding:12px 4px 22px}    
+.logo{width:68px;height:68px;border:1px solid #3b1515;border-radius:50%;display:grid;place-items:center;margin:0 auto 12px;background:#0d0d0d;box-shadow:0 0 35px #5b0b0b44}    
+.logo img{    
+  width:100%;    
+  height:100%;    
+  object-fit:contain;    
+  border-radius:50%;    
+  display:block;    
+}    
+h1{font-size:22px;margin:0 0 6px}    
+.sub{font-size:12px;color:var(--muted)}    
+.section-title{display:flex;align-items:center;gap:9px;margin:20px 2px 11px;font-size:14px;font-weight:bold}    
+.section-title:before{content:"";width:3px;height:17px;background:var(--red2);border-radius:5px}    
+.slider{display:flex;gap:11px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:5px;scrollbar-width:none}    
+.slider::-webkit-scrollbar{display:none}    
+  .reports{    
+  display:flex;    
+  gap:11px;    
+  overflow-x:auto;    
+  scroll-snap-type:x mandatory;    
+  padding-bottom:5px;    
+  scrollbar-width:none;    
+}  .reports::-webkit-scrollbar{  
+display:none;  
+}  .report-card{
+min-width:82%;
+height:215px;
+border:1px solid var(--line);
+border-radius:18px;
+overflow:hidden;
+position:relative;
+background:#0b0b0b;
+scroll-snap-align:start;
 }
-
-body{
-  margin:0;
-  background:
-    radial-gradient(circle at top,#180707 0,#080808 34%,#050505 100%);
-  color:var(--text);
-  font-family:Tahoma,Arial,sans-serif
-}
-
-a{
-  text-decoration:none;
-  color:inherit
-}
-
-.page{
-  width:min(100%,620px);
-  margin:auto;
-  padding:22px 16px 34px
-}
-
-/* HEADER */
-
-header{
-  text-align:center;
-  padding:12px 4px 22px
-}
-
-.logo{
-  width:68px;
-  height:68px;
-  border:1px solid #3b1515;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  margin:0 auto 12px;
-  background:#0d0d0d;
-  box-shadow:0 0 35px #5b0b0b44
-}
-
-.logo img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  border-radius:50%;
-  display:block
-}
-
-h1{
-  font-size:22px;
-  margin:0 0 6px
-}
-
-.sub{
-  font-size:12px;
-  color:var(--muted)
-}
-
-/* TITLES */
-
-.section-title{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  margin:20px 2px 11px;
-  font-size:14px;
-  font-weight:bold
-}
-
-.section-title:before{
-  content:"";
-  width:3px;
-  height:17px;
-  background:var(--red2);
-  border-radius:5px
-}
-
-/* REPORTS */
-
-.reports{
-  display:flex;
-  gap:11px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  padding-bottom:5px;
-  scrollbar-width:none
-}
-
-.reports::-webkit-scrollbar{
-  display:none
-}
-
-.report-card{
-  min-width:82%;
-  height:215px;
-  border:1px solid var(--line);
-  border-radius:18px;
-  overflow:hidden;
-  position:relative;
-  background:#0b0b0b;
-  scroll-snap-align:start
-}
-
-/* GALLERY */
 
 .report-gallery{
-  width:100%;
-  height:100%;
-  display:flex;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  scrollbar-width:none;
-  scroll-behavior:smooth;
-  direction:ltr
+width:100%;
+height:100%;
+display:flex;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+scrollbar-width:none;
 }
 
 .report-gallery::-webkit-scrollbar{
-  display:none
+display:none;
 }
 
 .report-gallery img{
-  min-width:100%;
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
-  object-position:center;
-  scroll-snap-align:start;
-  flex:0 0 100%;
-  background:#0b0b0b
+min-width:100%;
+width:100%;
+height:100%;
+display:block;
+object-fit:cover;
+object-position:center;
+scroll-snap-align:start;
 }
 
-/* IMAGE OVERLAY */
-
 .report-info{
-  position:absolute;
-  inset:auto 0 0;
-  padding:42px 15px 14px;
-  background:linear-gradient(
-    transparent,
-    rgba(5,5,5,.95)
-  );
-  pointer-events:none;
-  z-index:2
+position:absolute;
+inset:auto 0 0;
+padding:42px 15px 14px;
+background:linear-gradient(transparent,#050505);
+pointer-events:none;
 }
 
 .report-info b{
-  display:block;
-  font-size:14px;
-  margin-bottom:5px
+display:block;
+font-size:14px;
+margin-bottom:5px;
 }
 
 .report-info small{
-  color:#bbb;
-  font-size:11px
+color:#bbb;
+font-size:11px;
 }
-
-/* DOTS */
-
+.report{min-width:82%;height:215px;border:1px solid var(--line);border-radius:18px;overflow:hidden;position:relative;background:linear-gradient(145deg,#191919,#090909);scroll-snap-align:start}
+.report .photo{width:100%;height:100%;display:block;object-fit:cover;object-position:center;background:#0b0b0b}
+.report .overlay{position:absolute;inset:auto 0 0;padding:42px 15px 14px;background:linear-gradient(transparent,#050505)}
+.report b{display:block;font-size:14px;margin-bottom:5px}.report small{color:#bbb;font-size:11px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.social{display:flex;align-items:center;gap:11px;padding:13px;border:1px solid var(--line);border-radius:15px;background:#0e0e0e;transition:.2s}
+.social:active,.action:active{transform:scale(.98)}
+.icon{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#181818;font-size:17px}
+.social span{font-size:12px}.social small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+.card{border:1px solid var(--line);background:#0e0e0e;border-radius:17px;padding:15px}
+.phone{display:flex;justify-content:space-between;align-items:center}
+.phone .number{font-size:18px;direction:ltr}
+.action{display:block;text-align:center;border:1px solid #421313;background:#210909;padding:11px;border-radius:12px;font-size:12px;margin-top:12px}
+.address{line-height:2;font-size:13px;color:#ddd}
+.map-buttons{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}
+.map-buttons a{padding:12px;text-align:center;border-radius:12px;background:#171717;border:1px solid var(--line);font-size:11px}
+footer{text-align:center;color:#666;font-size:10px;padding-top:28px}
+@media(max-width:380px){.grid{grid-template-columns:1fr}.report{min-width:88%}}
 .report-dots{
-  position:absolute;
-  z-index:5;
-  left:0;
-  right:0;
-  bottom:8px;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:6px;
-
-  padding:0;
-  direction:ltr;
-  pointer-events:none
+display:flex;
+justify-content:center;
+gap:6px;
+padding:7px 0 2px;
+direction:ltr;
 }
 
 .report-dot{
-  width:6px;
-  height:6px;
-  border:0;
-  padding:0;
-  border-radius:50%;
-  background:#777;
-  opacity:.65;
-  transition:all .25s ease
+width:6px;
+height:6px;
+border:0;
+padding:0;
+border-radius:50%;
+background:#777;
+opacity:.6;
+transition:all .25s ease;
 }
 
 .report-dot.active{
-  width:16px;
-  border-radius:99px;
-  opacity:1;
-  background:#d12a2a;
-  box-shadow:0 0 8px #d12a2a55
+width:16px;
+border-radius:99px;
+opacity:1;
+background:#d12a2a;
 }
 
-/* SOCIAL */
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px
-}
-
-.social{
-  display:flex;
-  align-items:center;
-  gap:11px;
-  padding:13px;
-  border:1px solid var(--line);
-  border-radius:15px;
-  background:#0e0e0e;
-  transition:.2s
-}
-
-.social:active,
-.action:active{
-  transform:scale(.98)
-}
-
-.icon{
-  width:38px;
-  height:38px;
-  border-radius:11px;
-  display:grid;
-  place-items:center;
-  background:#181818;
-  font-size:17px;
-  flex-shrink:0
-}
-
-.social span{
-  font-size:12px
-}
-
-.social small{
-  display:block;
-  color:var(--muted);
-  font-size:10px;
-  margin-top:3px
-}
-
-/* CARDS */
-
-.card{
-  border:1px solid var(--line);
-  background:#0e0e0e;
-  border-radius:17px;
-  padding:15px
-}
-
-.phone{
-  display:flex;
-  justify-content:space-between;
-  align-items:center
-}
-
-.phone .number{
-  font-size:18px;
-  direction:ltr
-}
-
-.action{
-  display:block;
-  text-align:center;
-  border:1px solid #421313;
-  background:#210909;
-  padding:11px;
-  border-radius:12px;
-  font-size:12px;
-  margin-top:12px
-}
-
-.address{
-  line-height:2;
-  font-size:13px;
-  color:#ddd
-}
-
-.map-buttons{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:9px;
-  margin-top:12px
-}
-
-.map-buttons a{
-  padding:12px;
-  text-align:center;
-  border-radius:12px;
-  background:#171717;
-  border:1px solid var(--line);
-  font-size:11px
-}
-
-/* FOOTER */
-
-footer{
-  text-align:center;
-  color:#666;
-  font-size:10px;
-  padding-top:28px
-}
-
-/* MOBILE */
-
-@media(max-width:380px){
-
-  .grid{
-    grid-template-columns:1fr
-  }
-
-  .report-card{
-    min-width:88%
-  }
+.report-gallery{
+scroll-behavior:smooth;
 }
 </style>
-</head>
 
-<body>
-
-<main class="page">
-
-<header>
-
-  <div class="logo">
-    <img
-      src="IMG_20251102_193153_076.webp"
-      alt="لوگوی هیئت معظم حسینیون"
-    >
-  </div>
-
-  <h1>هیئت معظم حسینیون</h1>
-
-  <div class="sub">
-    رسانه و راه‌های ارتباطی هیئت
-  </div>
-
-</header>
-
-
-<!-- =========================
-     گزارش‌های تصویری
-========================= -->
-
-<section>
-
-  <div class="section-title">
-    گزارش‌های تصویری
-  </div>
-
-  <div class="reports">
-
-    <article class="report-card">
-
-      <div class="report-gallery">
-
-        <img
-          src="file_00000000142081f4a98e6146d9a0e812.png"
-          alt="۱۷ شهریورماه - عکس ۱"
-        >
-
-        <img
-          src="file_00000000d17482109c9a88afbf751dd6.png"
-          alt="۱۷ شهریورماه - عکس ۲"
-        >
-
-        <img
-          src="file_00000000fbc881f4a146cba041142c84.png"
-          alt="۱۷ شهریورماه - عکس ۳"
-        >
-
-      </div>
-
-
-      <div class="report-info">
-
-        <b>۱۷ شهریورماه</b>
-
-        <small>
-          روضه هفتگی به نیت فرج امام زمان (عج)
-        </small>
-
-      </div>
-
-
-      <!-- نقاط اسلاید -->
-
-      <div class="report-dots">
-
-        <button
-          class="report-dot active"
-          type="button"
-          aria-label="عکس اول"
-        ></button>
-
-        <button
-          class="report-dot"
-          type="button"
-          aria-label="عکس دوم"
-        ></button>
-
-        <button
-          class="report-dot"
-          type="button"
-          aria-label="عکس سوم"
-        ></button>
-
-      </div>
-
-    </article>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     شبکه‌های اجتماعی
-========================= -->
-
-<section>
-
-  <div class="section-title">
-    شبکه‌های اجتماعی
-  </div>
-
-  <div class="grid">
-
-    <a
-      class="social"
-      href="https://www.instagram.com/husseiniyun.bnd?stkn=MXhqN2xuMzY4ZnR0NA=="
-      target="_blank"
-    >
-      <div class="icon">◎</div>
-
-      <div>
-        <span>اینستاگرام هیئت</span>
-        <small>@husseiniyun.bnd</small>
-      </div>
-    </a>
-
-
-    <a
-      class="social"
-      href="https://t.me/husseniyun_bnd"
-      target="_blank"
-    >
-      <div class="icon">➤</div>
-
-      <div>
-        <span>تلگرام</span>
-        <small>@husseniyun_bnd</small>
-      </div>
-    </a>
-
-
-    <a
-      class="social"
-      href="https://rubika.ir/husseniyun_bnd"
-      target="_blank"
-    >
-      <div class="icon">R</div>
-
-      <div>
-        <span>روبیکا</span>
-        <small>husseniyun_bnd</small>
-      </div>
-    </a>
-
-
-    <a
-      class="social"
-      href="https://eitaa.com/husseniyun_bnd"
-      target="_blank"
-    >
-      <div class="icon">E</div>
-
-      <div>
-        <span>ایتا</span>
-        <small>husseniyun_bnd</small>
-      </div>
-    </a>
-
-  </div>
-
-
-  <div class="section-title">
-    رسانه شُبَیر مدیا
-  </div>
-
-
-  <a
-    class="social"
-    href="https://www.instagram.com/shubayer_media?stkn=MWI5Z3J0dGs0cDA5cg=="
-    target="_blank"
-  >
-
-    <div class="icon">
-      ش
-    </div>
-
-    <div>
-      <span>شُبَیر مدیا</span>
-      <small>رسانه هیئت</small>
-    </div>
-
-  </a>
-
-</section>
-
-
-<!-- =========================
-     زمان
-========================= -->
-
-<section>
-
-  <div class="section-title">
-    زمان برگزاری هیئت
-  </div>
-
-  <div
-    class="card"
-    style="text-align:center"
-  >
-
-    <div style="font-size:16px;font-weight:bold">
-      سه‌شنبه‌ها
-    </div>
-
-    <div
-      style="color:#aaa;font-size:12px;margin-top:7px"
-    >
-      ساعت ۲۰:۳۰
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     ارتباط
-========================= -->
-
-<section>
-
-  <div class="section-title">
-    ارتباط با هیئت
-  </div>
-
-  <div class="card phone">
-
-    <div>
-
-      <div class="sub">
-        شماره تماس
-      </div>
-
-      <div class="number">
-        09376067183
-      </div>
-
-    </div>
-
-    <div class="icon">
-      ☎
-    </div>
-
-  </div>
-
-
-  <a
-    class="action"
-    href="tel:09376067183"
-  >
-    تماس با هیئت
-  </a>
-
-</section>
-
-
-<!-- =========================
-     آدرس
-========================= -->
-
-<section>
-
-  <div class="section-title">
-    آدرس هیئت
-  </div>
-
-  <div class="card">
-
-    <div class="address">
-      بندرعباس، بلوار امام حسین،
-      شهرک طلائیه فاز اول،
-      مسجد حضرت فاطمه معصومه (ص)
-    </div>
-
-
-    <div class="map-buttons">
-
-      <a
-        target="_blank"
-        href="https://www.google.com/maps/search/?api=1&query=%D8%A8%D9%86%D8%AF%D8%B1%D8%B9%D8%A8%D8%A7%D8%B3%20%D8%A8%D9%84%D9%88%D8%A7%D8%B1%20%D8%A7%D9%85%D8%A7%D9%85%20%D8%AD%D8%B3%DB%8C%D9%86%20%D8%B4%D9%87%D8%B1%DA%A9%20%D8%B7%D9%84%D8%A7%D8%A6%DB%8C%D9%87%20%D9%81%D8%A7%D8%B2%20%D8%A7%D9%88%D9%84%20%D9%85%D8%B3%D8%AC%D8%AF%20%D8%AD%D8%B6%D8%B1%D8%AA%20%D9%81%D8%A7%D8%B7%D9%85%D9%87%20%D9%85%D8%B9%D8%B5%D9%88%D9%85%D9%87"
-      >
-        🗺️ Google Maps
-      </a>
-
-      <a
-        target="_blank"
-        href="https://nshn.ir/?lat=27.183221&lng=56.266645&z=17"
-      >
-        📍 نشان
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<footer>
-  هیئت معظم حسینیون • بندرعباس
-</footer>
-
-</main>
-
-
-<script>
-
-document
-.querySelectorAll('.report-card')
-.forEach(card => {
-
-  const gallery =
-    card.querySelector('.report-gallery');
-
-  const dots =
-    [...card.querySelectorAll('.report-dot')];
-
-
-  function updateDots(){
-
-    const index =
-      Math.max(
-        0,
-        Math.min(
-          dots.length - 1,
-          Math.round(
-            gallery.scrollLeft /
-            Math.max(
-              gallery.clientWidth,
-              1
-            )
-          )
-        )
-      );
-
-
-    dots.forEach(
-      (dot,i) => {
-
-        dot.classList.toggle(
-          'active',
-          i === index
-        );
-
-      }
-    );
-
-  }
-
-
-  gallery.addEventListener(
-    'scroll',
-    () => {
-
-      requestAnimationFrame(
-        updateDots
-      );
-
-    },
-    {passive:true}
-  );
-
-
-  dots.forEach(
-    (dot,i) => {
-
-      dot.addEventListener(
-        'click',
-        () => {
-
-          gallery.scrollTo({
-
-            left:
-              i *
-              gallery.clientWidth,
-
-            behavior:'smooth'
-
-          });
-
-        }
-      );
-
-    }
-  );
-
-
-  updateDots();
-
+</head>    
+<body>    
+<main class="page">    
+<header>    
+  <div class="logo">    
+  <img src="IMG_20251102_193153_076.webp" alt="لوگوی هیئت معظم حسینیون">    
+  </div>    
+  <h1>هیئت معظم حسینیون</h1>    
+  <div class="sub">رسانه و راه‌های ارتباطی هیئت</div>    
+</header>  <section>    
+  <div class="report-dots">    
+  <button class="report-dot active" type="button"></button>    
+  <button class="report-dot" type="button"></button>    
+  <button class="report-dot" type="button"></button>    
+  </div>    
+<div class="section-title">گزارش‌های تصویری</div>  <div class="reports">    <!-- گزارش ۱: ۱۷ شهریور -->    <article class="report-card">  <div class="report-gallery">    <img src="file_00000000142081f4a98e6146d9a0e812.png"    
+alt="۱۷ شهریورماه - عکس ۱">
+
+<img src="file_00000000d17482109c9a88afbf751dd6.png"    
+alt="۱۷ شهریورماه - عکس ۲">
+
+<img src="file_00000000fbc881f4a146cba041142c84.png"    
+alt="۱۷ شهریورماه - عکس ۳">
+
+</div>    <div class="report-info">    
+  <b>۱۷ شهریورماه</b>    
+  <small>روضه هفتگی به نیت فرج امام زمان (عج)</small>    
+</div>    </article>    <!-- گزارش مراسم بعدی را اینجا اضافه می‌کنیم -->  </div>    
+</section>  <section>    
+<div class="section-title">شبکه‌های اجتماعی</div>    
+<div class="grid">    
+  <a class="social" href="https://www.instagram.com/husseiniyun.bnd?stkn=MXhqN2xuMzY4ZnR0NA==" target="_blank"><div class="icon">◎</div><div><span>اینستاگرام هیئت</span><small>@husseiniyun.bnd</small></div></a>    
+  <a class="social" href="https://t.me/husseniyun_bnd" target="_blank"><div class="icon">➤</div><div><span>تلگرام</span><small>@husseniyun_bnd</small></div></a>    
+  <a class="social" href="https://rubika.ir/husseniyun_bnd" target="_blank"><div class="icon">R</div><div><span>روبیکا</span><small>husseniyun_bnd</small></div></a>    
+  <a class="social" href="https://eitaa.com/husseniyun_bnd" target="_blank"><div class="icon">E</div><div><span>ایتا</span><small>husseniyun_bnd</small></div></a>    
+</div>    
+<div class="section-title">رسانه شُبَیر مدیا</div>    
+<a class="social" href="https://www.instagram.com/shubayer_media?stkn=MWI5Z3J0dGs0cDA5cg==" target="_blank"><div class="icon">ش</div><div><span>شُبَیر مدیا</span><small>رسانه هیئت</small></div></a>    
+</section>  <section>    
+<div class="section-title">زمان برگزاری هیئت</div>    
+<div class="card" style="text-align:center">    
+  <div style="font-size:16px;font-weight:bold">سه‌شنبه‌ها</div>    
+  <div style="color:#aaa;font-size:12px;margin-top:7px">ساعت ۲۰:۳۰</div>    
+</div>    
+</section>  <section>    
+<div class="section-title">ارتباط با هیئت</div>    
+<div class="card phone">    
+  <div><div class="sub">شماره تماس</div><div class="number">09376067183</div></div>    
+  <div class="icon">☎</div>    
+</div>    
+<a class="action" href="tel:09376067183">تماس با هیئت</a>    
+</section>  <section>    
+<div class="section-title">آدرس هیئت</div>    
+<div class="card">    
+  <div class="address">بندرعباس، بلوار امام حسین، شهرک طلائیه فاز اول، مسجد حضرت فاطمه معصومه (ص)</div>    
+  <div class="map-buttons">    
+    <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%D8%A8%D9%86%D8%AF%D8%B1%D8%B9%D8%A8%D8%A7%D8%B3%20%D8%A8%D9%84%D9%88%D8%A7%D8%B1%20%D8%A7%D9%85%D8%A7%D9%85%20%D8%AD%D8%B3%DB%8C%D9%86%20%D8%B4%D9%87%D8%B1%DA%A9%20%D8%B7%D9%84%D8%A7%D8%A6%DB%8C%D9%87%20%D9%81%D8%A7%D8%B2%20%D8%A7%D9%88%D9%84%20%D9%85%D8%B3%D8%AC%D8%AF%20%D8%AD%D8%B6%D8%B1%D8%AA%20%D9%81%D8%A7%D8%B7%D9%85%D9%87%20%D9%85%D8%B9%D8%B5%D9%88%D9%85%D9%87">🗺️ Google Maps</a>    
+    <a target="_blank" href="https://nshn.ir/?lat=27.183221&lng=56.266645&z=17">📍 نشان</a>    
+  </div>    
+</div>    
+</section>  <footer>هیئت معظم حسینیون • بندرعباس</footer>    
+</main>    
+  <script>    
+document.querySelectorAll('.report-card').forEach(card => {    
+  const gallery = card.querySelector('.report-gallery');    
+  const dots = [...card.querySelectorAll('.report-dot')];  const updateDots = () => {  
+const index = Math.max(  
+0,  
+Math.min(  
+dots.length - 1,  
+Math.round(gallery.scrollLeft / Math.max(gallery.clientWidth, 1))  
+)  
+);  dots.forEach((dot, i) => {
+dot.classList.toggle('active', i === index);
 });
 
+};
+
+gallery.addEventListener('scroll', () => {
+requestAnimationFrame(updateDots);
+}, { passive: true });
+
+dots.forEach((dot, i) => {
+dot.addEventListener('click', () => {
+gallery.scrollTo({
+left: i * gallery.clientWidth,
+behavior: 'smooth'
+});
+});
+});
+
+updateDots();
+});
 </script>
 
-</body>
-</html>
+</body>    
+</html>    می‌خوام طاها همین باشه
+ولی ظاهر گالری و اسلایدی بودنش به همین شکل که هست
