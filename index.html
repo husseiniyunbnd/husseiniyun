@@ -2,639 +2,333 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>هیئت معظم حسینیون</title>
 
 <style>
+*{box-sizing:border-box}
+
 :root{
-  --bg:#070707;
-  --card:#0d0d0d;
-  --card2:#101010;
-  --line:#202020;
-  --line2:#292929;
-  --text:#f2f2f2;
-  --muted:#8d8d8d;
-  --red:#a51616;
-  --red2:#c52222;
-}
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
+  --bg:#080808;
+  --card:#111;
+  --line:#252525;
+  --text:#f4f4f4;
+  --muted:#a8a8a8;
+  --red:#9d1717;
+  --red2:#d12a2a
 }
 
 body{
-  min-height:100vh;
-  overflow-x:hidden;
+  margin:0;
   background:
-    radial-gradient(
-      circle at 50% -15%,
-      rgba(150,18,18,.12),
-      transparent 32%
-    ),
-    linear-gradient(
-      180deg,
-      #070707 0%,
-      #080808 45%,
-      #060606 100%
-    );
+    radial-gradient(circle at top,#180707 0,#080808 34%,#050505 100%);
   color:var(--text);
-  font-family:
-    Tahoma,
-    Arial,
-    sans-serif;
+  font-family:Tahoma,Arial,sans-serif
 }
 
 a{
-  color:inherit;
   text-decoration:none;
+  color:inherit
 }
 
-button{
-  font-family:inherit;
+.page{
+  width:min(100%,620px);
+  margin:auto;
+  padding:22px 16px 34px
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header{
-  position:relative;
   text-align:center;
-  padding:46px 20px 34px;
-  border-bottom:1px solid rgba(255,255,255,.055);
+  padding:12px 4px 22px
 }
 
-header::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:-1px;
-  width:80px;
-  height:1px;
-  transform:translateX(-50%);
-  background:var(--red2);
-  opacity:.7;
-}
-
-.logo-mark{
-  position:relative;
-  width:56px;
-  height:56px;
-  margin:0 auto 17px;
-  border:1px solid rgba(197,34,34,.5);
+.logo{
+  width:68px;
+  height:68px;
+  border:1px solid #3b1515;
   border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:
-    0 0 35px rgba(150,18,18,.08);
+  display:grid;
+  place-items:center;
+  margin:0 auto 12px;
+  background:#0d0d0d;
+  box-shadow:0 0 35px #5b0b0b44
 }
 
-.logo-mark::before{
-  content:"";
-  width:21px;
-  height:21px;
-  border:1px solid rgba(197,34,34,.65);
+.logo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
   border-radius:50%;
-}
-
-.logo-mark::after{
-  content:"";
-  position:absolute;
-  width:5px;
-  height:5px;
-  right:10px;
-  top:9px;
-  border-radius:50%;
-  background:var(--red2);
-  box-shadow:0 0 13px rgba(197,34,34,.7);
+  display:block
 }
 
 h1{
-  font-size:25px;
-  line-height:1.5;
-  font-weight:800;
-  letter-spacing:-.6px;
+  font-size:22px;
+  margin:0 0 6px
 }
 
-.header-sub{
-  margin-top:7px;
-  color:#858585;
+.sub{
   font-size:12px;
+  color:var(--muted)
 }
 
-/* =========================
-   MAIN
-========================= */
-
-main{
-  width:min(920px,calc(100% - 28px));
-  margin:0 auto;
-  padding:35px 0 58px;
-}
-
-section{
-  position:relative;
-}
+/* TITLES */
 
 .section-title{
-  position:relative;
   display:flex;
   align-items:center;
-  gap:11px;
-  margin-bottom:17px;
-  font-size:17px;
-  font-weight:800;
+  gap:9px;
+  margin:20px 2px 11px;
+  font-size:14px;
+  font-weight:bold
 }
 
-.section-title::before{
+.section-title:before{
   content:"";
   width:3px;
-  height:20px;
-  border-radius:10px;
+  height:17px;
   background:var(--red2);
-  box-shadow:0 0 13px rgba(197,34,34,.28);
+  border-radius:5px
 }
 
-/* =========================
-   REPORT CARD
-========================= */
+/* REPORTS */
+
+.reports{
+  display:flex;
+  gap:11px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:5px;
+  scrollbar-width:none
+}
+
+.reports::-webkit-scrollbar{
+  display:none
+}
 
 .report-card{
-  position:relative;
-  overflow:hidden;
+  min-width:82%;
+  height:215px;
   border:1px solid var(--line);
-  border-radius:20px;
-  background:
-    linear-gradient(
-      180deg,
-      #111 0%,
-      #0b0b0b 100%
-    );
-  box-shadow:
-    0 24px 70px rgba(0,0,0,.48),
-    0 4px 20px rgba(0,0,0,.25),
-    inset 0 1px 0 rgba(255,255,255,.025);
+  border-radius:18px;
+  overflow:hidden;
+  position:relative;
+  background:#0b0b0b;
+  scroll-snap-align:start
 }
 
-/* =========================
-   GALLERY
-========================= */
+/* GALLERY */
 
 .report-gallery{
-  position:relative;
   width:100%;
-  overflow:hidden;
-  background:#050505;
-  touch-action:pan-y;
-  user-select:none;
-  -webkit-user-select:none;
-}
-
-.report-track{
+  height:100%;
   display:flex;
-  width:100%;
-  direction:ltr;
-  will-change:transform;
-  transform:translate3d(0,0,0);
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+  scroll-behavior:smooth;
+  direction:ltr
 }
 
-.report-slide{
-  position:relative;
-  flex:0 0 100%;
-  width:100%;
+.report-gallery::-webkit-scrollbar{
+  display:none
+}
+
+.report-gallery img{
   min-width:100%;
-  aspect-ratio:16 / 10;
-  overflow:hidden;
-  background:#050505;
-  direction:rtl;
-}
-
-.report-slide img{
-  position:absolute;
-  inset:0;
   width:100%;
   height:100%;
   display:block;
   object-fit:cover;
   object-position:center;
-  pointer-events:none;
-  -webkit-user-drag:none;
-  user-select:none;
-
-  filter:
-    brightness(.84)
-    contrast(1.04)
-    saturate(.92);
-
-  transform:scale(1.015);
-
-  transition:
-    transform 1.1s cubic-bezier(.2,.75,.2,1),
-    filter .7s ease;
+  scroll-snap-align:start;
+  flex:0 0 100%;
+  background:#0b0b0b
 }
 
-.report-slide.active img{
-  transform:scale(1.045);
-
-  filter:
-    brightness(.9)
-    contrast(1.05)
-    saturate(.95);
-}
-
-.report-slide::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,.02) 0%,
-      rgba(0,0,0,0) 48%,
-      rgba(0,0,0,.42) 100%
-    );
-}
-
-/* =========================
-   CONTROLS
-========================= */
-
-.report-controls{
-  position:absolute;
-  z-index:5;
-  left:18px;
-  right:18px;
-  bottom:17px;
-
-  display:flex;
-  justify-content:center;
-
-  pointer-events:none;
-}
-
-.report-control-glass{
-  min-width:96px;
-  padding:8px 12px;
-
-  border:1px solid rgba(255,255,255,.11);
-  border-radius:999px;
-
-  background:rgba(7,7,7,.52);
-
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-
-  box-shadow:
-    0 8px 25px rgba(0,0,0,.28);
-}
-
-.report-dots{
-  display:flex;
-  direction:ltr;
-  justify-content:center;
-  align-items:center;
-  gap:6px;
-}
-
-.report-dot{
-  appearance:none;
-  border:0;
-  width:6px;
-  height:6px;
-  padding:0;
-
-  border-radius:99px;
-
-  background:rgba(255,255,255,.4);
-
-  cursor:pointer;
-
-  transition:
-    width .3s ease,
-    background .3s ease,
-    transform .3s ease;
-}
-
-.report-dot:hover{
-  transform:scale(1.15);
-}
-
-.report-dot.active{
-  width:22px;
-  background:var(--red2);
-  box-shadow:0 0 10px rgba(197,34,34,.35);
-}
-
-/* =========================
-   PROGRESS
-========================= */
-
-.report-progress{
-  position:absolute;
-  z-index:6;
-  left:0;
-  right:0;
-  bottom:0;
-  height:2px;
-
-  background:rgba(255,255,255,.07);
-
-  pointer-events:none;
-}
-
-.report-progress-bar{
-  width:0%;
-  height:100%;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--red),
-      var(--red2)
-    );
-
-  box-shadow:
-    0 0 8px rgba(197,34,34,.45);
-}
-
-/* =========================
-   FLASH
-========================= */
-
-.report-flash{
-  position:absolute;
-  z-index:7;
-  inset:0;
-
-  background:rgba(255,255,255,.045);
-
-  pointer-events:none;
-  opacity:0;
-}
-
-.report-flash.play{
-  animation:flash .42s ease;
-}
-
-@keyframes flash{
-  0%{opacity:0}
-  30%{opacity:1}
-  100%{opacity:0}
-}
-
-/* =========================
-   REPORT INFO
-========================= */
+/* IMAGE OVERLAY */
 
 .report-info{
-  padding:18px 20px 20px;
-  border-top:1px solid rgba(255,255,255,.045);
+  position:absolute;
+  inset:auto 0 0;
+  padding:42px 15px 14px;
+  background:linear-gradient(
+    transparent,
+    rgba(5,5,5,.95)
+  );
+  pointer-events:none;
+  z-index:2
 }
 
 .report-info b{
   display:block;
-  margin-bottom:7px;
-
-  font-size:16px;
-  font-weight:800;
+  font-size:14px;
+  margin-bottom:5px
 }
 
 .report-info small{
-  display:block;
-
-  color:#898989;
-  font-size:12px;
-  line-height:1.9;
+  color:#bbb;
+  font-size:11px
 }
 
-/* =========================
-   INFO BOXES
-========================= */
+/* DOTS */
 
-.info-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  margin-top:28px;
-}
-
-.info-box{
-  position:relative;
-  min-height:92px;
-
-  padding:17px;
-
-  border:1px solid var(--line);
-  border-radius:16px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #101010,
-      #0b0b0b
-    );
-
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.018);
-
-  transition:
-    border-color .25s ease,
-    transform .25s ease,
-    background .25s ease;
-}
-
-.info-box:hover{
-  border-color:var(--line2);
-  background:#101010;
-}
-
-.info-label{
-  margin-bottom:8px;
-
-  color:#666;
-  font-size:11px;
-}
-
-.info-value{
-  font-size:14px;
-  line-height:1.95;
-  font-weight:700;
-  color:#ddd;
-}
-
-/* =========================
-   LINKS
-========================= */
-
-.links{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:9px;
-  margin-top:12px;
-}
-
-.link{
-  min-height:54px;
+.report-dots{
+  position:absolute;
+  z-index:5;
+  left:0;
+  right:0;
+  bottom:8px;
 
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
+  gap:6px;
 
-  padding:8px;
+  padding:0;
+  direction:ltr;
+  pointer-events:none
+}
 
+.report-dot{
+  width:6px;
+  height:6px;
+  border:0;
+  padding:0;
+  border-radius:50%;
+  background:#777;
+  opacity:.65;
+  transition:all .25s ease
+}
+
+.report-dot.active{
+  width:16px;
+  border-radius:99px;
+  opacity:1;
+  background:#d12a2a;
+  box-shadow:0 0 8px #d12a2a55
+}
+
+/* SOCIAL */
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px
+}
+
+.social{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  padding:13px;
   border:1px solid var(--line);
-  border-radius:14px;
+  border-radius:15px;
+  background:#0e0e0e;
+  transition:.2s
+}
 
-  background:#0c0c0c;
+.social:active,
+.action:active{
+  transform:scale(.98)
+}
 
-  color:#cfcfcf;
+.icon{
+  width:38px;
+  height:38px;
+  border-radius:11px;
+  display:grid;
+  place-items:center;
+  background:#181818;
+  font-size:17px;
+  flex-shrink:0
+}
+
+.social span{
+  font-size:12px
+}
+
+.social small{
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+  margin-top:3px
+}
+
+/* CARDS */
+
+.card{
+  border:1px solid var(--line);
+  background:#0e0e0e;
+  border-radius:17px;
+  padding:15px
+}
+
+.phone{
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+
+.phone .number{
+  font-size:18px;
+  direction:ltr
+}
+
+.action{
+  display:block;
+  text-align:center;
+  border:1px solid #421313;
+  background:#210909;
+  padding:11px;
+  border-radius:12px;
   font-size:12px;
-
-  transition:
-    background .25s ease,
-    border-color .25s ease,
-    transform .25s ease,
-    color .25s ease;
+  margin-top:12px
 }
 
-.link:hover{
-  background:#121212;
-  border-color:#333;
-  color:#fff;
-  transform:translateY(-2px);
+.address{
+  line-height:2;
+  font-size:13px;
+  color:#ddd
 }
 
-.link.instagram:hover{
-  border-color:rgba(197,34,34,.5);
+.map-buttons{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+  margin-top:12px
 }
 
-/* =========================
-   ADDRESS
-========================= */
-
-section[style*="margin-top:34px"] .info-box{
-  transition:
-    border-color .25s ease,
-    background .25s ease;
+.map-buttons a{
+  padding:12px;
+  text-align:center;
+  border-radius:12px;
+  background:#171717;
+  border:1px solid var(--line);
+  font-size:11px
 }
 
-section[style*="margin-top:34px"] .info-box:hover{
-  border-color:rgba(197,34,34,.28);
-}
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
-  padding:21px 20px;
-
   text-align:center;
-
-  color:#4e4e4e;
-  font-size:11px;
-
-  border-top:1px solid rgba(255,255,255,.045);
+  color:#666;
+  font-size:10px;
+  padding-top:28px
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
-@media(max-width:650px){
+@media(max-width:380px){
 
-  header{
-    padding:
-      31px
-      18px
-      27px;
-  }
-
-  .logo-mark{
-    width:52px;
-    height:52px;
-    margin-bottom:14px;
-  }
-
-  h1{
-    font-size:22px;
-  }
-
-  .header-sub{
-    font-size:11px;
-  }
-
-  main{
-    width:min(100% - 18px,920px);
-    padding-top:25px;
-  }
-
-  .section-title{
-    font-size:16px;
-    margin-bottom:15px;
+  .grid{
+    grid-template-columns:1fr
   }
 
   .report-card{
-    border-radius:18px;
-  }
-
-  .report-slide{
-    aspect-ratio:4 / 3;
-  }
-
-  .report-controls{
-    left:12px;
-    right:12px;
-    bottom:13px;
-  }
-
-  .report-control-glass{
-    min-width:88px;
-    padding:7px 11px;
-  }
-
-  .report-info{
-    padding:16px 16px 18px;
-  }
-
-  .info-grid{
-    grid-template-columns:1fr;
-  }
-
-  .info-box{
-    min-height:88px;
-  }
-
-  .links{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .links .link:last-child{
-    grid-column:1 / -1;
-  }
-}
-
-@media(prefers-reduced-motion:reduce){
-
-  html{
-    scroll-behavior:auto;
-  }
-
-  *,
-  *::before,
-  *::after{
-    animation-duration:.01ms !important;
-    transition-duration:.01ms !important;
+    min-width:88%
   }
 }
 </style>
@@ -642,118 +336,56 @@ footer{
 
 <body>
 
+<main class="page">
+
 <header>
 
-  <div class="logo-mark"></div>
+  <div class="logo">
+    <img
+      src="IMG_20251102_193153_076.webp"
+      alt="لوگوی هیئت معظم حسینیون"
+    >
+  </div>
 
   <h1>هیئت معظم حسینیون</h1>
 
-  <div class="header-sub">
+  <div class="sub">
     رسانه و راه‌های ارتباطی هیئت
   </div>
 
 </header>
 
 
-<main>
+<!-- =========================
+     گزارش‌های تصویری
+========================= -->
 
-  <!-- گزارش تصویری -->
+<section>
 
-  <section>
+  <div class="section-title">
+    گزارش‌های تصویری
+  </div>
 
-    <div class="section-title">
-      گزارش‌های تصویری
-    </div>
+  <div class="reports">
 
     <article class="report-card">
 
-      <div class="report-gallery" id="reportGallery">
+      <div class="report-gallery">
 
-        <div class="report-track" id="reportTrack">
+        <img
+          src="file_00000000142081f4a98e6146d9a0e812.png"
+          alt="۱۷ شهریورماه - عکس ۱"
+        >
 
-          <!-- عکس اول -->
-          <div class="report-slide active">
+        <img
+          src="file_00000000d17482109c9a88afbf751dd6.png"
+          alt="۱۷ شهریورماه - عکس ۲"
+        >
 
-            <img
-              src="file_00000000142081f4a98e6146d9a0e812.png"
-              alt="گزارش تصویری ۱۷ شهریورماه - عکس اول"
-              draggable="false"
-            >
-
-            <div class="report-controls">
-              <div class="report-control-glass">
-
-                <div class="report-dots">
-
-                  <button
-                    class="report-dot active"
-                    type="button"
-                    data-index="0"
-                    aria-label="عکس اول"
-                  ></button>
-
-                  <button
-                    class="report-dot"
-                    type="button"
-                    data-index="1"
-                    aria-label="عکس دوم"
-                  ></button>
-
-                  <button
-                    class="report-dot"
-                    type="button"
-                    data-index="2"
-                    aria-label="عکس سوم"
-                  ></button>
-
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-
-          <!-- عکس دوم -->
-          <div class="report-slide">
-
-            <img
-              src="file_00000000d17482109c9a88afbf751dd6.png"
-              alt="گزارش تصویری ۱۷ شهریورماه - عکس دوم"
-              draggable="false"
-            >
-
-          </div>
-
-
-          <!-- عکس سوم -->
-          <div class="report-slide">
-
-            <img
-              src="file_00000000fbc881f4a146cba041142c84.png"
-              alt="گزارش تصویری ۱۷ شهریورماه - عکس سوم"
-              draggable="false"
-            >
-
-          </div>
-
-        </div>
-
-
-        <div
-          class="report-flash"
-          id="reportFlash"
-        ></div>
-
-
-        <div class="report-progress">
-
-          <div
-            class="report-progress-bar"
-            id="reportProgress"
-          ></div>
-
-        </div>
+        <img
+          src="file_00000000fbc881f4a146cba041142c84.png"
+          alt="۱۷ شهریورماه - عکس ۳"
+        >
 
       </div>
 
@@ -768,618 +400,339 @@ footer{
 
       </div>
 
+
+      <!-- نقاط اسلاید -->
+
+      <div class="report-dots">
+
+        <button
+          class="report-dot active"
+          type="button"
+          aria-label="عکس اول"
+        ></button>
+
+        <button
+          class="report-dot"
+          type="button"
+          aria-label="عکس دوم"
+        ></button>
+
+        <button
+          class="report-dot"
+          type="button"
+          aria-label="عکس سوم"
+        ></button>
+
+      </div>
+
     </article>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- برنامه هفتگی -->
+<!-- =========================
+     شبکه‌های اجتماعی
+========================= -->
 
-  <section style="margin-top:34px">
+<section>
 
-    <div class="section-title">
-      برنامه هفتگی
-    </div>
+  <div class="section-title">
+    شبکه‌های اجتماعی
+  </div>
 
-    <div class="info-grid">
+  <div class="grid">
 
-      <div class="info-box">
+    <a
+      class="social"
+      href="https://www.instagram.com/husseiniyun.bnd?stkn=MXhqN2xuMzY4ZnR0NA=="
+      target="_blank"
+    >
+      <div class="icon">◎</div>
 
-        <div class="info-label">
-          زمان برگزاری
-        </div>
-
-        <div class="info-value">
-          سه‌شنبه‌ها<br>
-          ساعت ۲۰:۳۰
-        </div>
-
+      <div>
+        <span>اینستاگرام هیئت</span>
+        <small>@husseiniyun.bnd</small>
       </div>
+    </a>
 
 
-      <div class="info-box">
+    <a
+      class="social"
+      href="https://t.me/husseniyun_bnd"
+      target="_blank"
+    >
+      <div class="icon">➤</div>
 
-        <div class="info-label">
-          محل برگزاری
-        </div>
-
-        <div class="info-value">
-          بندرعباس، بلوار امام حسین،
-          شهرک طلائیه فاز اول،
-          مسجد حضرت فاطمه معصومه (ص)
-        </div>
-
+      <div>
+        <span>تلگرام</span>
+        <small>@husseniyun_bnd</small>
       </div>
+    </a>
 
+
+    <a
+      class="social"
+      href="https://rubika.ir/husseniyun_bnd"
+      target="_blank"
+    >
+      <div class="icon">R</div>
+
+      <div>
+        <span>روبیکا</span>
+        <small>husseniyun_bnd</small>
+      </div>
+    </a>
+
+
+    <a
+      class="social"
+      href="https://eitaa.com/husseniyun_bnd"
+      target="_blank"
+    >
+      <div class="icon">E</div>
+
+      <div>
+        <span>ایتا</span>
+        <small>husseniyun_bnd</small>
+      </div>
+    </a>
+
+  </div>
+
+
+  <div class="section-title">
+    رسانه شُبَیر مدیا
+  </div>
+
+
+  <a
+    class="social"
+    href="https://www.instagram.com/shubayer_media?stkn=MWI5Z3J0dGs0cDA5cg=="
+    target="_blank"
+  >
+
+    <div class="icon">
+      ش
     </div>
 
-  </section>
-
-
-  <!-- راه‌های ارتباطی -->
-
-  <section style="margin-top:34px">
-
-    <div class="section-title">
-      راه‌های ارتباطی
+    <div>
+      <span>شُبَیر مدیا</span>
+      <small>رسانه هیئت</small>
     </div>
 
-    <div class="info-box">
+  </a>
 
-      <div class="info-label">
+</section>
+
+
+<!-- =========================
+     زمان
+========================= -->
+
+<section>
+
+  <div class="section-title">
+    زمان برگزاری هیئت
+  </div>
+
+  <div
+    class="card"
+    style="text-align:center"
+  >
+
+    <div style="font-size:16px;font-weight:bold">
+      سه‌شنبه‌ها
+    </div>
+
+    <div
+      style="color:#aaa;font-size:12px;margin-top:7px"
+    >
+      ساعت ۲۰:۳۰
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     ارتباط
+========================= -->
+
+<section>
+
+  <div class="section-title">
+    ارتباط با هیئت
+  </div>
+
+  <div class="card phone">
+
+    <div>
+
+      <div class="sub">
         شماره تماس
       </div>
 
-      <div class="info-value">
+      <div class="number">
         09376067183
       </div>
 
     </div>
 
+    <div class="icon">
+      ☎
+    </div>
 
-    <div class="links">
+  </div>
+
+
+  <a
+    class="action"
+    href="tel:09376067183"
+  >
+    تماس با هیئت
+  </a>
+
+</section>
+
+
+<!-- =========================
+     آدرس
+========================= -->
+
+<section>
+
+  <div class="section-title">
+    آدرس هیئت
+  </div>
+
+  <div class="card">
+
+    <div class="address">
+      بندرعباس، بلوار امام حسین،
+      شهرک طلائیه فاز اول،
+      مسجد حضرت فاطمه معصومه (ص)
+    </div>
+
+
+    <div class="map-buttons">
 
       <a
-        class="link instagram"
-        href="https://www.instagram.com/husseiniyun.bnd?stkn=MXhqN2xuMzY4ZnR0NA=="
         target="_blank"
-        rel="noopener"
+        href="https://www.google.com/maps/search/?api=1&query=%D8%A8%D9%86%D8%AF%D8%B1%D8%B9%D8%A8%D8%A7%D8%B3%20%D8%A8%D9%84%D9%88%D8%A7%D8%B1%20%D8%A7%D9%85%D8%A7%D9%85%20%D8%AD%D8%B3%DB%8C%D9%86%20%D8%B4%D9%87%D8%B1%DA%A9%20%D8%B7%D9%84%D8%A7%D8%A6%DB%8C%D9%87%20%D9%81%D8%A7%D8%B2%20%D8%A7%D9%88%D9%84%20%D9%85%D8%B3%D8%AC%D8%AF%20%D8%AD%D8%B6%D8%B1%D8%AA%20%D9%81%D8%A7%D8%B7%D9%85%D9%87%20%D9%85%D8%B9%D8%B5%D9%88%D9%85%D9%87"
       >
-        اینستاگرام هیئت
+        🗺️ Google Maps
       </a>
 
       <a
-        class="link"
-        href="https://t.me/husseniyun_bnd"
         target="_blank"
-        rel="noopener"
+        href="https://nshn.ir/?lat=27.183221&lng=56.266645&z=17"
       >
-        تلگرام
-      </a>
-
-      <a
-        class="link"
-        href="https://rubika.ir/husseniyun_bnd"
-        target="_blank"
-        rel="noopener"
-      >
-        روبیکا
-      </a>
-
-      <a
-        class="link"
-        href="https://eitaa.com/husseniyun_bnd"
-        target="_blank"
-        rel="noopener"
-      >
-        ایتا
-      </a>
-
-      <a
-        class="link"
-        href="https://www.instagram.com/shubayer_media?stkn=MWI5Z3J0dGs0cDA5cg=="
-        target="_blank"
-        rel="noopener"
-      >
-        شُبَیر مدیا
+        📍 نشان
       </a>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- آدرس -->
-
-  <section style="margin-top:34px">
-
-    <div class="section-title">
-      آدرس
-    </div>
-
-    <a
-      class="info-box"
-      href="https://www.google.com/maps/search/?api=1&query=%D8%A8%D9%86%D8%AF%D8%B1%D8%B9%D8%A8%D8%A7%D8%B3%20%D8%A8%D9%84%D9%88%D8%A7%D8%B1%20%D8%A7%D9%85%D8%A7%D9%85%20%D8%AD%D8%B3%DB%8C%D9%86%20%D8%B4%D9%87%D8%B1%DA%A9%20%D8%B7%D9%84%D8%A7%D8%A6%DB%8C%D9%87%20%D9%81%D8%A7%D8%B2%20%D8%A7%D9%88%D9%84%20%D9%85%D8%B3%D8%AC%D8%AF%20%D8%AD%D8%B6%D8%B1%D8%AA%20%D9%81%D8%A7%D8%B7%D9%85%D9%87%20%D9%85%D8%B9%D8%B5%D9%88%D9%85%D9%87"
-      target="_blank"
-      rel="noopener"
-      style="display:block"
-    >
-
-      <div class="info-label">
-        موقعیت هیئت
-      </div>
-
-      <div class="info-value">
-        بندرعباس، بلوار امام حسین،
-        شهرک طلائیه فاز اول،
-        مسجد حضرت فاطمه معصومه (ص)
-      </div>
-
-    </a>
-
-  </section>
+<footer>
+  هیئت معظم حسینیون • بندرعباس
+</footer>
 
 </main>
 
 
-<footer>
-  هیئت معظم حسینیون • رسانه هیئت
-</footer>
-
-
 <script>
-(function(){
+
+document
+.querySelectorAll('.report-card')
+.forEach(card => {
 
   const gallery =
-    document.getElementById("reportGallery");
+    card.querySelector('.report-gallery');
 
-  const track =
-    document.getElementById("reportTrack");
-
-  const slides =
-    Array.from(
-      track.querySelectorAll(".report-slide")
-    );
-
-  const allDots =
-    Array.from(
-      document.querySelectorAll(".report-dot")
-    );
-
-  const progress =
-    document.getElementById("reportProgress");
-
-  const flash =
-    document.getElementById("reportFlash");
-
-  const total =
-    slides.length;
-
-  let current = 0;
-  let startX = 0;
-  let currentX = 0;
-  let startTranslate = 0;
-  let dragging = false;
-  let autoplayTimer = null;
-
-  const AUTOPLAY = 5000;
-
-
-  function getWidth(){
-    return gallery.getBoundingClientRect().width;
-  }
-
-
-  function setPosition(index,animate){
-
-    const width = getWidth();
-
-    track.style.transition =
-      animate
-        ? "transform .62s cubic-bezier(.22,.75,.2,1)"
-        : "none";
-
-    track.style.transform =
-      "translate3d(" +
-      (-index * width) +
-      "px,0,0)";
-
-  }
+  const dots =
+    [...card.querySelectorAll('.report-dot')];
 
 
   function updateDots(){
 
-    allDots.forEach(function(dot){
-
-      dot.classList.toggle(
-        "active",
-        Number(dot.dataset.index) === current
+    const index =
+      Math.max(
+        0,
+        Math.min(
+          dots.length - 1,
+          Math.round(
+            gallery.scrollLeft /
+            Math.max(
+              gallery.clientWidth,
+              1
+            )
+          )
+        )
       );
 
-    });
 
-  }
+    dots.forEach(
+      (dot,i) => {
 
-
-  function updateSlides(){
-
-    slides.forEach(function(slide,index){
-
-      slide.classList.toggle(
-        "active",
-        index === current
-      );
-
-    });
-
-    updateDots();
-
-  }
-
-
-  function resetProgress(){
-
-    progress.style.transition = "none";
-    progress.style.width = "0%";
-
-    requestAnimationFrame(function(){
-
-      requestAnimationFrame(function(){
-
-        progress.style.transition =
-          "width " + AUTOPLAY + "ms linear";
-
-        progress.style.width = "100%";
-
-      });
-
-    });
-
-  }
-
-
-  function playFlash(){
-
-    flash.classList.remove("play");
-
-    void flash.offsetWidth;
-
-    flash.classList.add("play");
-
-  }
-
-
-  function goTo(index,animate=true,effect=true){
-
-    if(index < 0){
-      index = total - 1;
-    }
-
-    if(index >= total){
-      index = 0;
-    }
-
-    current = index;
-
-    setPosition(current,animate);
-    updateSlides();
-
-    if(effect){
-      playFlash();
-    }
-
-    startAutoplay();
-
-  }
-
-
-  function next(){
-    goTo(current + 1);
-  }
-
-
-  function previous(){
-    goTo(current - 1);
-  }
-
-
-  function stopAutoplay(){
-    clearTimeout(autoplayTimer);
-  }
-
-
-  function startAutoplay(){
-
-    stopAutoplay();
-
-    resetProgress();
-
-    autoplayTimer =
-      setTimeout(
-        next,
-        AUTOPLAY
-      );
-
-  }
-
-
-  /* TOUCH */
-
-  gallery.addEventListener(
-    "touchstart",
-    function(e){
-
-      if(!e.touches[0]){
-        return;
-      }
-
-      dragging = true;
-
-      startX =
-        e.touches[0].clientX;
-
-      currentX = startX;
-
-      startTranslate =
-        -current * getWidth();
-
-      track.style.transition = "none";
-
-      stopAutoplay();
-
-    },
-    {passive:true}
-  );
-
-
-  gallery.addEventListener(
-    "touchmove",
-    function(e){
-
-      if(!dragging || !e.touches[0]){
-        return;
-      }
-
-      currentX =
-        e.touches[0].clientX;
-
-      const delta =
-        currentX - startX;
-
-      let translate =
-        startTranslate + delta;
-
-      if(
-        (current === 0 && delta > 0) ||
-        (current === total - 1 && delta < 0)
-      ){
-        translate =
-          startTranslate + delta * .28;
-      }
-
-      track.style.transform =
-        "translate3d(" +
-        translate +
-        "px,0,0)";
-
-    },
-    {passive:true}
-  );
-
-
-  gallery.addEventListener(
-    "touchend",
-    function(){
-
-      if(!dragging){
-        return;
-      }
-
-      dragging = false;
-
-      const delta =
-        currentX - startX;
-
-      const threshold =
-        Math.max(
-          45,
-          getWidth() * .12
-        );
-
-      if(Math.abs(delta) >= threshold){
-
-        if(delta < 0){
-          next();
-        }else{
-          previous();
-        }
-
-      }else{
-
-        setPosition(current,true);
-        startAutoplay();
-
-      }
-
-    },
-    {passive:true}
-  );
-
-
-  /* MOUSE */
-
-  gallery.addEventListener(
-    "mousedown",
-    function(e){
-
-      dragging = true;
-
-      startX = e.clientX;
-      currentX = startX;
-
-      startTranslate =
-        -current * getWidth();
-
-      track.style.transition = "none";
-
-      stopAutoplay();
-
-      gallery.style.cursor =
-        "grabbing";
-
-    }
-  );
-
-
-  window.addEventListener(
-    "mousemove",
-    function(e){
-
-      if(!dragging){
-        return;
-      }
-
-      currentX = e.clientX;
-
-      const delta =
-        currentX - startX;
-
-      let translate =
-        startTranslate + delta;
-
-      if(
-        (current === 0 && delta > 0) ||
-        (current === total - 1 && delta < 0)
-      ){
-        translate =
-          startTranslate + delta * .28;
-      }
-
-      track.style.transform =
-        "translate3d(" +
-        translate +
-        "px,0,0)";
-
-    }
-  );
-
-
-  window.addEventListener(
-    "mouseup",
-    function(){
-
-      if(!dragging){
-        return;
-      }
-
-      dragging = false;
-
-      gallery.style.cursor = "";
-
-      const delta =
-        currentX - startX;
-
-      const threshold =
-        Math.max(
-          45,
-          getWidth() * .12
-        );
-
-      if(Math.abs(delta) >= threshold){
-
-        if(delta < 0){
-          next();
-        }else{
-          previous();
-        }
-
-      }else{
-
-        setPosition(current,true);
-        startAutoplay();
-
-      }
-
-    }
-  );
-
-
-  /* DOTS */
-
-  allDots.forEach(function(dot){
-
-    dot.addEventListener(
-      "click",
-      function(e){
-
-        e.preventDefault();
-        e.stopPropagation();
-
-        goTo(
-          Number(dot.dataset.index)
+        dot.classList.toggle(
+          'active',
+          i === index
         );
 
       }
     );
 
-  });
+  }
 
 
-  /* IMAGE DRAG */
+  gallery.addEventListener(
+    'scroll',
+    () => {
 
-  slides.forEach(function(slide){
+      requestAnimationFrame(
+        updateDots
+      );
 
-    const image =
-      slide.querySelector("img");
-
-    image.addEventListener(
-      "dragstart",
-      function(e){
-        e.preventDefault();
-      }
-    );
-
-  });
+    },
+    {passive:true}
+  );
 
 
-  /* RESIZE */
+  dots.forEach(
+    (dot,i) => {
 
-  window.addEventListener(
-    "resize",
-    function(){
+      dot.addEventListener(
+        'click',
+        () => {
 
-      setPosition(
-        current,
-        false
+          gallery.scrollTo({
+
+            left:
+              i *
+              gallery.clientWidth,
+
+            behavior:'smooth'
+
+          });
+
+        }
       );
 
     }
   );
 
 
-  /* TAB */
+  updateDots();
 
-  document.addEventListener(
-    "visibilitychange",
-    function(){
+});
 
-      if(document.hidden){
-        stopAutoplay();
-      }else{
-        startAutoplay();
-      }
-
-    }
-  );
-
-
-  /* INIT */
-
-  setPosition(0,false);
-  updateSlides();
-  startAutoplay();
-
-})();
 </script>
 
 </body>
